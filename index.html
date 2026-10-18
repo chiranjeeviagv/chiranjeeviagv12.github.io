@@ -8,176 +8,161 @@
 </head>
 <body>
 
-    <!-- SIDEBAR NAVIGATION PANEL (DESKTOP) -->
-    <aside class="sidebar">
-        <div class="profile-box">
-            <img src="profile.jpg" alt="G V Chiranjeevi Adari" onerror="this.src='https://placeholder.com'">
-            <h3>G V Chiranjeevi Adari</h3>
-            <p>Electrical Engineer & AI Professional</p>
+    <!-- STICKY NAVIGATION BAR WITH INTEGRATED DRAWER SYSTEM -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GVC Adari</div>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#publications">Publications</a>
+                <a href="#experience">Experience</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-        <nav class="sidebar-nav">
-            <a href="#about" class="active">About Me</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Teaching Experience</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#publications">Publications & Patents</a>
-            <a href="#lecture">Video Lecture</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </aside>
+    </nav>
 
-    <!-- MOBILE MENU HEADER -->
-    <header class="mobile-header">
-        <h2>GVC Adari</h2>
-        <button id="mobile-menu-toggle">☰</button>
+    <!-- HERO GRADIENT GRAPHIC FRAME -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>G V Chiranjeevi Adari</h1>
+            <p class="subtitle">Electrical Engineer & AI Professional</p>
+            <p class="tagline">"To grow as a good professional by contributing my skills for the development of the organization besides self-improvement. Forever a student, dreaming for career in a nice environment which is technically and ethically developed."</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#publications" class="btn btn-secondary">View Research</a>
+            </div>
+        </div>
     </header>
 
-    <!-- MAIN APP CANVAS CONTENT CONTAINER -->
-    <main class="main-content">
+    <!-- MAIN APP CANVAS FRAMEWORK -->
+    <div class="main-container">
         
-        <!-- HERO BANNER SECTION -->
-        <section class="hero-banner">
-            <h1>G V Chiranjeevi Adari</h1>
-            <h2>Electrical Engineer, Software Professional & AIML Educator</h2>
-            <p class="objective">"To grow as a good professional by contributing my skills for the development of the organization besides self-improvement. Forever a student, dreaming for career in a nice environment which is technically and ethically developed."</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn primary-btn">Contact Me</a>
-                <a href="#publications" class="btn secondary-btn">View Research</a>
-            </div>
-        </section>
+        <!-- SIDEBAR INDEX NAVIGATION LAYER (DESKTOP) -->
+        <aside class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="#about" class="sidebar-item active">About Me</a></li>
+                <li><a href="#education" class="sidebar-item">Education Summary</a></li>
+                <li><a href="#certifications" class="sidebar-item">Certifications & Skills</a></li>
+                <li><a href="#publications" class="sidebar-item">Publications & Patents</a></li>
+                <li><a href="#experience" class="sidebar-item">Teaching Experience</a></li>
+                <li><a href="#courses" class="sidebar-item">Courses Handled</a></li>
+                <li><a href="#contact" class="sidebar-item">Contact Details</a></li>
+            </ul>
+        </aside>
 
-        <!-- ABOUT ME SECTION -->
-        <section id="about" class="content-section">
-            <h2>About Me</h2>
-            <div class="grid-2">
-                <div>
-                    <p>I am a seasoned Electrical Engineer and Software Professional with over 13 years of cross-regional teaching experience spanning undergraduate and postgraduate levels. My expertise bridges foundational Electrical & Electronics Engineering with modern cutting-edge technologies including Artificial Intelligence, Machine Learning, and Full-Stack Javascript Engineering.</p>
-                    <p><strong>Strengths:</strong> Strong Problem Analysis skills, Outcome-Based Education (OBE) methodology focus, curriculum design expertise, department accreditation file preparation leadership, and excellent time management.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Core Hobbies</h3>
-                    <ul>
-                        <li>🎨 Fine Arts & Drawing</li>
-                        <li>🎵 Listening to Songs</li>
-                        <li>🏛️ Exploring Indian Heritage & National Culture</li>
-                        <li>📹 Watching Historical and Technical Documentaries</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- LAYOUT CONTENT CONTENT CONTEXT AREA -->
+        <main class="content-area">
 
-        <!-- EDUCATION SUMMARY SECTION -->
-        <section id="education" class="content-section">
-            <h2>Educational Summary</h2>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Degree / Exam</th>
-                            <th>Board / University</th>
-                            <th>Year</th>
-                            <th>Percentage / Division</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="highlight-row">
-                            <td><strong>Ph.D. (Power Systems - Smart Grid)</strong></td>
-                            <td>JNTUK, Kakinada</td>
-                            <td>Ongoing</td>
-                            <td>Pursuing (Part-Time Mode)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>M.Tech (HVE - High Voltage Engineering)</strong></td>
-                            <td>JNTUK, Kakinada</td>
-                            <td>2012</td>
-                            <td>72% (First Class with Distinction)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>B.Tech (EEE)</strong></td>
-                            <td>Chaitanya Engg College / JNTU Hyderabad</td>
-                            <td>2007</td>
-                            <td>71.63% (First Class with Distinction)</td>
-                        </tr>
-                        <tr>
-                            <td>Intermediate (MPC)</td>
-                            <td>Gayatri Junior College, Vizianagaram</td>
-                            <td>2003</td>
-                            <td>94.1% (First Class)</td>
-                        </tr>
-                        <tr>
-                            <td>Secondary School Certificate (SSC)</td>
-                            <td>ZP High School, Jami, Vizianagaram</td>
-                            <td>2001</td>
-                            <td>89.96% (First Class)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <!-- ABOUT ME SECTION -->
+            <section id="about" class="content-section">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <div>
+                        <p>I am a seasoned Electrical Engineer and Software Professional with over 13 years of cross-regional teaching experience spanning undergraduate and postgraduate levels. My expertise bridges foundational Electrical & Electronics Engineering with modern cutting-edge technologies including Artificial Intelligence, Machine Learning, and Full-Stack Javascript Engineering.</p>
+                        <p>I specialize in Artificial Intelligence techniques, smart grid cybersecurity, and data-driven systems engineering. Driven by continuous learning, I maintain active professional certifications from industry giants like IBM, Microsoft, and Google.</p>
+                    </div>
+                    <div class="strengths-box">
+                        <h3>Core Strengths</h3>
+                        <ul>
+                            <li>13 Years of Engineering Teaching Excellence</li>
+                            <li>Outcome-Based Education (OBE) Framework Specialist</li>
+                            <li>Multi-disciplinary expertise across AI, ML, IoT, and Smart Grids</li>
+                            <li>Robust curriculum design and accreditation folder workflows</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-            <div class="milestones-box" style="margin-top: 20px; padding: 15px; background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 4px;">
-                <h3 style="margin-top: 0; color: #16a34a;">🏅 Key Milestones</h3>
-                <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
-                    <li>Qualified in <strong>GATE 2014</strong></li>
-                    <li>Ratified as Faculty by <strong>JNTUK Kakinada</strong> (17-Oct 2015)</li>
-                    <li>Received prestigious <strong>Pratibha Award (2016-17)</strong> at VIIT, Vizag</li>
-                    <li>Qualified in <strong>APRCET 2018</strong> for Doctoral admissions</li>
-                    <li>Ratified as Faculty by <strong>JNTUH Hyderabad</strong> (October 2022)</li>
-                    <li>Published a textbook title: <strong>"Digital Introduction to Microprocessors"</strong> with BPB Publishers</li>
-                </ul>
-            </div>
-        </section>
+            <!-- EDUCATIONAL SUMMARY SECTION -->
+            <section id="education" class="content-section">
+                <h2>Educational Summary</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">Ongoing</p>
+                        <h3>Ph.D. (Power Systems - Smart Grid)</h3>
+                        <p class="institution">JNTUK, Kakinada</p>
+                        <span class="badge badge-info">Pursuing (Part-Time Mode)</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">2012</p>
+                        <h3>M.Tech (HVE - High Voltage Engineering)</h3>
+                        <p class="institution">JNTUK, Kakinada</p>
+                        <span class="badge badge-success">72% (First Class with Distinction)</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">2007</p>
+                        <h3>B.Tech (EEE)</h3>
+                        <p class="institution">Chaitanya Engg College / JNTU Hyderabad</p>
+                        <span class="badge badge-success">71.63% (First Class with Distinction)</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">2003</p>
+                        <h3>Intermediate (MPC)</h3>
+                        <p class="institution">Gayatri Junior College, Vizianagaram</p>
+                        <span class="badge badge-info">94.1% (First Class)</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">2001</p>
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <p class="institution">ZP High School, Jami, Vizianagaram</p>
+                        <span class="badge badge-info">89.96% (First Class)</span>
+                    </div>
+                </div>
+            </section>
 
-        <!-- TEACHING EXPERIENCE TIMELINE SECTION -->
-        <section id="experience" class="content-section">
-            <h2>Teaching Experience Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">2025 - 2026</span>
-                    <h3>Assistant Professor</h3>
-                    <h4>Sandip Foundation's SITRC (Sandip University), Nashik, Maharashtra</h4>
-                    <p>Department of Electrical Engineering (Deputation to AIML). Handled Artificial Intelligence Techniques, Expert Systems, and Advanced Python.</p>
+            <!-- CERTIFICATIONS SECTION -->
+            <section id="certifications" class="content-section">
+                <h2>Technical Certifications & Skills</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Credentials</button>
+                    <button class="filter-btn" data-filter="ibm">IBM Full Stack & AI</button>
+                    <button class="filter-btn" data-filter="microsoft">Microsoft AI/ML</button>
+                    <button class="filter-btn" data-filter="google">Google Cloud & Cyber</button>
+                    <button class="filter-btn" data-filter="nptel">NPTEL Engineering</button>
                 </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2023 - 2025</span>
-                    <h3>Assistant Professor</h3>
-                    <h4>Guru Nanak Institute of Technology (A), Hyderabad</h4>
-                    <p>Department of Electrical and Electronics Engineering. Handled advanced core systems and student mentoring configurations.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2022 - 2023</span>
-                    <h3>Assistant Professor</h3>
-                    <h4>Malla Reddy Engineering College for Women (A), Secunderabad</h4>
-                    <p>Department of EEE. Managed academic course file preparation, lab assessments, and exam branch coordination roles.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2019 - 2021</span>
-                    <h3>Sr. Assistant Professor</h3>
-                    <h4>Aditya College of Engineering, Surampalem, Andhra Pradesh</h4>
-                    <p>Department of EEE. Guided complex undergraduate student major projects and organized engineering workshops.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2015 - 2019</span>
-                    <h3>Assistant Professor</h3>
-                    <h4>Vignan's Institute of Information Technology (A), Visakhapatnam</h4>
-                    <p>Department of EEE. Delivered core lectures, managed time-table development pipelines, and engineered accreditation records.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2011 - 2015</span>
-                    <h3>Assistant Professor</h3>
-                    <h4>Raghu Institute of Technology, Dakamarri, Visakhapatnam</h4>
-                    <p>Department of EEE. Supervised electrical simulation laboratory blocks and introduced automated programming frameworks.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2007 - 2011</span>
-                    <h3>Assistant Professor</h3>
-                    <h4>Aditya Engineering College, Surampalem, East Godavari</h4>
-                    <p>Initial professional academic teaching appointment within the Department of Electrical and Electronics Engineering.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- CERTIFICATIONS & SKILLS SECTION -->
-        <section id="certifications" class="content-section">
-            <h2>Certifications & Professional Skills</h2>
-            <div class="filter-group">
-                <button class="filter-btn active" data-filter="all">All Credentials</button>
+                <div class="certifications-grid">
+                    <div class="cert-card" data-category="ibm">
+                        <span class="cert-provider ibm-color">IBM</span>
+                        <h3>Full Stack JavaScript Developer</h3>
+                        <p class="cert-meta">Professional Certificate | 12-Course Series</p>
+                        <a href="https://coursera.org" target="_blank" class="cert-link">Verify Credential →</a>
+                    </div>
+                    <div class="cert-card" data-category="microsoft">
+                        <span class="cert-provider ms-color">Microsoft</span>
+                        <h3>AI and ML Engineering</h3>
+                        <p class="cert-meta">Professional Certificate | 5-Course Series</p>
+                        <a href="https://coursera.org" target="_blank" class="cert-link">Verify Credential →</a>
+                    </div>
+                    <div class="cert-card" data-category="ibm">
+                        <span class="cert-provider ibm-color">IBM</span>
+                        <h3>AI Developer</h3>
+                        <p class="cert-meta">Professional Certificate | 10-Course Series</p>
+                        <a href="https://coursera.org" target="_blank" class="cert-link">Verify Credential →</a>
+                    </div>
+                    <div class="cert-card" data-category="ibm">
+                        <span class="cert-provider ibm-color">IBM</span>
+                        <h3>Java Developer</h3>
+                        <p class="cert-meta">Professional Certificate | 14-Course Series</p>
+                        <a href="https://coursera.org" target="_blank" class="cert-link">Verify Credential →</a>
+                    </div>
+                    <div class="cert-card" data-category="ibm">
+                        <span class="cert-provider ibm-color">IBM</span>
+                        <h3>JavaScript Backend Developer</h3>
+                        <p class="cert-meta">Professional Certificate | 13-Course Series</p>
+                        <a href="https://coursera.org" target="_blank" class="cert-link">Verify Credential →</a>
+                    </div>
+                    <div class="cert-card" data-category="google">
