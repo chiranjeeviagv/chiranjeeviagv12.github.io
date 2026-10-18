@@ -119,96 +119,24 @@
                     </div>
                 </div>
             </section>
+<!-- ================= CERTIFICATIONS & SKILLS SECTION ================= -->
+<section id="certifications" style="margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <h2 style="color: #0f2b5c; border-bottom: 2px solid #0076ff; padding-bottom: 10px; margin-bottom: 20px;">Certifications & Skills</h2>
+    
+    <!-- INTERACTIVE CATEGORY FILTER NAVIGATION LABELS -->
+    <div class="filter-group" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px;">
+        <button class="filter-btn active" data-filter="all" style="padding: 8px 16px; background: #0076ff; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">All Certifications</button>
+        <button class="filter-btn" data-filter="ibm" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">IBM Specializations</button>
+        <button class="filter-btn" data-filter="microsoft" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">Microsoft AI/ML</button>
+        <button class="filter-btn" data-filter="google" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">Google Cybersecurity</button>
+        <button class="filter-btn" data-filter="nptel" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">NPTEL Technical Credentials</button>
+    </div>
 
-            <!-- Certifications Section -->
-            <section id="certifications" class="content-section">
-                <h2>Technical Certifications &amp; Skills</h2>
-                <p>Filter credentials by choosing a specific technology stack provider:</p>
-                
-                <div class="filter-controls">
-                    <button class="filter-btn active" data-filter="all">All Credentials</button>
-                    <button class="filter-btn" data-filter="ibm">IBM Full Stack &amp; AI</button>
-                    <button class="filter-btn" data-filter="microsoft">Microsoft AI/ML</button>
-                    <button class="filter-btn" data-filter="google">Google Cloud &amp; Cyber</button>
-                    <button class="filter-btn" data-filter="nptel">NPTEL Engineering</button>
-                </div>
-
-                <div class="certifications-grid" id="cert-grid">
-                    <!-- IBM Full Stack -->
-                    <div class="cert-card" data-category="ibm">
-                        <span class="cert-provider ibm-color">IBM</span>
-                        <h3>Full Stack JavaScript Developer</h3>
-                        <p class="cert-meta">Professional Certificate | 12-Course Series</p>
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/L2Q2VEP5W243" target="_blank" class="cert-link">Verify Credential &rarr;</a>
-                    </div>
-                    <!-- Microsoft AI/ML -->
-                    <div class="cert-card" data-category="microsoft">
-                        <span class="cert-provider ms-color">Microsoft</span>
-                        <h3>AI and ML Engineering</h3>
-                        <p class="cert-meta">Professional Certificate | 5-Course Series</p>
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/5SGHZ101WA4W" target="_blank" class="cert-link">Verify Credential &rarr;</a>
-                    </div>
-                    <!-- IBM AI Developer -->
-                    <div class="cert-card" data-category="ibm">
-                        <span class="cert-provider ibm-color">IBM</span>
-                        <h3>AI Developer</h3>
-                        <p class="cert-meta">Professional Certificate | 10-Course Series</p>
-                        <a href="https://coursera.org/verify/professional-cert/E06UAT9KFM8S" target="_blank" class="cert-link">Verify Credential &rarr;</a>
-                    </div>
-                    <!-- IBM Java Developer -->
-                    <div class="cert-card" data-category="ibm">
-                        <span class="cert-provider ibm-color">IBM</span>
-                        <h3>Java Developer</h3>
-                        <p class="cert-meta">Professional Certificate | 14-Course Series</p>
-                        <a href="https://coursera.org/verify/professional-cert/CGMXJ0SN33A5" target="_blank" class="cert-link">Verify Credential &rarr;</a>
-                    </div>
-                    <!-- IBM JavaScript Backend -->
-                    <div class="cert-card" data-category="ibm">
-                        <span class="cert-provider ibm-color">IBM</span>
-                        <h3>JavaScript Backend Developer</h3>
-                        <p class="cert-meta">Professional Certificate | 13-Course Series</p>
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/R9G3UO4SYXJM" target="_blank" class="cert-link">Verify Credential &rarr;</a>
-                    </div>
-                    <!-- Google Cybersecurity -->
-                    <div class="cert-card" data-category="google">
-                        <span class="cert-provider google-color">Google</span>
-                        <h3>Google Cybersecurity</h3>
-                        <p class="cert-meta">Professional Certificate | 9-Course Series</p>
-                        <a href="https://coursera.org/verify/professional-cert/SZEO3FT6Q193" target="_blank" class="cert-link">Verify Credential &rarr;</a>
-                    </div>
-                    <!-- NPTEL Comp Arch -->
-                    <div class="cert-card" data-category="nptel">
-                        <span class="cert-provider nptel-color">NPTEL</span>
-                        <h3>Advanced Computer Architecture</h3>
-                        <p class="cert-meta">Online National Certification</p>
-                    </div>
-                    <!-- NPTEL Networks -->
-                    <div class="cert-card" data-category="nptel">
-                        <span class="cert-provider nptel-color">NPTEL</span>
-                        <h3>Advanced Computer Networks</h3>
-                        <p class="cert-meta">Online National Certification</p>
-                    </div>
-                    <!-- NPTEL Smart Grid -->
-                    <div class="cert-card" data-category="nptel">
-                        <span class="cert-provider nptel-color">NPTEL</span>
-                        <h3>Introduction to Smart Grid</h3>
-                        <p class="cert-meta">8-Week Specialization Course</p>
-                    </div>
-                </div>
-
-                <div class="skills-wrapper" style="margin-top:40px;">
-                    <h3>Technical Programming Inventory</h3>
-                    <div class="skills-tags">
-                        <span class="tag">Advanced Python</span>
-                        <span class="tag">JavaScript (ES6+)</span>
-                        <span class="tag">Matlab Programming</span>
-                        <span class="tag">Java Core</span>
-                        <span class="tag">Full Stack Development</span>
-                        <span class="tag">AI Application Engine Architectures</span>
-                        <span class="tag">IoT Driven Architectures</span>
-                    </div>
-                </div>
-            </section>
+    <!-- DYNAMIC JAVASCRIPT TARGET RENDER NODE CONTAINER -->
+    <div id="certifications-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+        <!-- The script.js file will automatically inject all 7 NPTEL courses and Coursera items here -->
+    </div>
+</section>
 
             <!-- Publications & Patents Section -->
             <section id="publications" class="content-section">
