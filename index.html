@@ -3,298 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G V Chiranjeevi Adari | Personal Profile</title>
+    <title>G V Chiranjeevi Adari | Personal Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">GVC Adari</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>G V Chiranjeevi Adari</h1>
-            <p class="subtitle">Electrical Engineer &amp; Software Professional</p>
-            <p class="tagline">"Forever a student, dreaming for a career in an environment which is technically and ethically developed."</p>
-            <div class="hero-ctas">
-                <a href="#contact" class="btn btn-primary">Contact Me</a>
-                <a href="#publications" class="btn btn-secondary">View Research</a>
-            </div>
+    <!-- SIDEBAR NAVIGATION PANEL (DESKTOP) -->
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="profile.jpg" alt="G V Chiranjeevi Adari" onerror="this.src='https://placeholder.com'">
+            <h3>G V Chiranjeevi Adari</h3>
+            <p>Electrical Engineer & AI Professional</p>
         </div>
+        <nav class="sidebar-nav">
+            <a href="#about" class="active">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Teaching Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#publications">Publications & Patents</a>
+            <a href="#lecture">Video Lecture</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </aside>
+
+    <!-- MOBILE MENU HEADER -->
+    <header class="mobile-header">
+        <h2>GVC Adari</h2>
+        <button id="mobile-menu-toggle">☰</button>
     </header>
 
-    <!-- Main Container split into Sidebar and Content -->
-    <div class="main-container">
-        <!-- Sticky Sidebar Navigation -->
-        <aside class="sidebar">
-            <ul class="sidebar-links">
-                <li><a href="#about" class="sidebar-item active">Profile Overview</a></li>
-                <li><a href="#education" class="sidebar-item">Education Summary</a></li>
-                <li><a href="#certifications" class="sidebar-item">Certifications &amp; Skills</a></li>
-                <li><a href="#publications" class="sidebar-item">Publications &amp; Patents</a></li>
-                <li><a href="#experience" class="sidebar-item">Teaching Experience</a></li>
-                <li><a href="#courses" class="sidebar-item">Courses Handled</a></li>
-                <li><a href="#contact" class="sidebar-item">Contact Details</a></li>
-            </ul>
-        </aside>
+    <!-- MAIN APP CANVAS CONTENT CONTAINER -->
+    <main class="main-content">
+        
+        <!-- HERO BANNER SECTION -->
+        <section class="hero-banner">
+            <h1>G V Chiranjeevi Adari</h1>
+            <h2>Electrical Engineer, Software Professional & AIML Educator</h2>
+            <p class="objective">"To grow as a good professional by contributing my skills for the development of the organization besides self-improvement. Forever a student, dreaming for career in a nice environment which is technically and ethically developed."</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn primary-btn">Contact Me</a>
+                <a href="#publications" class="btn secondary-btn">View Research</a>
+            </div>
+        </section>
 
-        <!-- Main Content Area -->
-        <main class="content-area">
-            <!-- About Section -->
-            <section id="about" class="content-section">
-                <h2>About Me</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>I am a dedicated Electrical Engineer and Software Professional with over 9 years of professional teaching experience post-M.Tech. My unique background allows me to bridge the gap between heavy electrical systems and modern computerized controls, AI, and full-stack web solutions.</p>
-                        <p>I specialize in Artificial Intelligence techniques, smart grid cybersecurity, and data-driven systems engineering. Driven by continuous learning, I maintain active professional certifications from industry giants like IBM, Microsoft, and Google.</p>
-                    </div>
-                    <div class="strengths-box">
-                        <h3>Core Strengths</h3>
-                        <ul>
-                            <li>9+ Years of Engineering Teaching Excellence</li>
-                            <li>Outcome-Based Education (OBE) Framework Specialist</li>
-                            <li>Multi-disciplinary expertise across AI, ML, IoT, and Smart Grids</li>
-                            <li>Robust curriculum design and accreditation folder workflows</li>
-                        </ul>
-                    </div>
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <div class="grid-2">
+                <div>
+                    <p>I am a seasoned Electrical Engineer and Software Professional with over 13 years of cross-regional teaching experience spanning undergraduate and postgraduate levels. My expertise bridges foundational Electrical & Electronics Engineering with modern cutting-edge technologies including Artificial Intelligence, Machine Learning, and Full-Stack Javascript Engineering.</p>
+                    <p><strong>Strengths:</strong> Strong Problem Analysis skills, Outcome-Based Education (OBE) methodology focus, curriculum design expertise, department accreditation file preparation leadership, and excellent time management.</p>
                 </div>
-            </section>
-
-            <!-- Education Section -->
-            <section id="education" class="content-section">
-                <h2>Education Summary</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2012</div>
-                        <div class="timeline-content">
-                            <h3>M.Tech (High Voltage Engineering)</h3>
-                            <p class="institution">JNTU, Kakinada</p>
-                            <span class="badge badge-success">Distinction (72%)</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2007</div>
-                        <div class="timeline-content">
-                            <h3>B.Tech (Electrical &amp; Electronics Engineering)</h3>
-                            <p class="institution">Chaitanya Engineering College, Visakhapatnam</p>
-                            <span class="badge badge-success">Distinction (71.63%)</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2003</div>
-                        <div class="timeline-content">
-                            <h3>Intermediate (MPC)</h3>
-                            <p class="institution">Gayatri Junior College, Vizianagaram</p>
-                            <span class="badge badge-info">First Class</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2001</div>
-                        <div class="timeline-content">
-                            <h3>Secondary School Certificate</h3>
-                            <p class="institution">ZP High School, Jami, Vizianagaram</p>
-                            <span class="badge badge-info">First Class</span>
-                        </div>
-                    </div>
+                <div class="info-card">
+                    <h3>Core Hobbies</h3>
+                    <ul>
+                        <li>🎨 Fine Arts & Drawing</li>
+                        <li>🎵 Listening to Songs</li>
+                        <li>🏛️ Exploring Indian Heritage & National Culture</li>
+                        <li>📹 Watching Historical and Technical Documentaries</li>
+                    </ul>
                 </div>
-            </section>
-<!-- ================= CERTIFICATIONS & SKILLS SECTION ================= -->
-<section id="certifications" style="margin-top: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <h2 style="color: #0f2b5c; border-bottom: 2px solid #0076ff; padding-bottom: 10px; margin-bottom: 20px;">Certifications & Skills</h2>
-    
-    <!-- INTERACTIVE CATEGORY FILTER NAVIGATION LABELS -->
-    <div class="filter-group" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px;">
-        <button class="filter-btn active" data-filter="all" style="padding: 8px 16px; background: #0076ff; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">All Certifications</button>
-        <button class="filter-btn" data-filter="ibm" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">IBM Specializations</button>
-        <button class="filter-btn" data-filter="microsoft" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">Microsoft AI/ML</button>
-        <button class="filter-btn" data-filter="google" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">Google Cybersecurity</button>
-        <button class="filter-btn" data-filter="nptel" style="padding: 8px 16px; background: #e2e8f0; color: #4a5568; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">NPTEL Technical Credentials</button>
-    </div>
+            </div>
+        </section>
 
-    <!-- DYNAMIC JAVASCRIPT TARGET RENDER NODE CONTAINER -->
-    <div id="certifications-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
-        <!-- The script.js file will automatically inject all 7 NPTEL courses and Coursera items here -->
-    </div>
-</section>
+        <!-- EDUCATION SUMMARY SECTION -->
+        <section id="education" class="content-section">
+            <h2>Educational Summary</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Degree / Exam</th>
+                            <th>Board / University</th>
+                            <th>Year</th>
+                            <th>Percentage / Division</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td><strong>Ph.D. (Power Systems - Smart Grid)</strong></td>
+                            <td>JNTUK, Kakinada</td>
+                            <td>Ongoing</td>
+                            <td>Pursuing (Part-Time Mode)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M.Tech (HVE - High Voltage Engineering)</strong></td>
+                            <td>JNTUK, Kakinada</td>
+                            <td>2012</td>
+                            <td>72% (First Class with Distinction)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B.Tech (EEE)</strong></td>
+                            <td>Chaitanya Engg College / JNTU Hyderabad</td>
+                            <td>2007</td>
+                            <td>71.63% (First Class with Distinction)</td>
+                        </tr>
+                        <tr>
+                            <td>Intermediate (MPC)</td>
+                            <td>Gayatri Junior College, Vizianagaram</td>
+                            <td>2003</td>
+                            <td>94.1% (First Class)</td>
+                        </tr>
+                        <tr>
+                            <td>Secondary School Certificate (SSC)</td>
+                            <td>ZP High School, Jami, Vizianagaram</td>
+                            <td>2001</td>
+                            <td>89.96% (First Class)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <!-- Publications & Patents Section -->
-            <section id="publications" class="content-section">
-                <h2>Publications &amp; Patents</h2>
-                
-                <div class="pub-block">
-                    <h3><span class="indicator patent-badge">Patent</span> Smart Medical Diagnosis System using IoT Driven Machine Learning and Big Data Analytics</h3>
-                    <p class="pub-meta">Bio-Medical Engineering Domain | Publication Number: 11/2024(INA)</p>
-                    <a href="http://ipindia.nic.in/index.htm" target="_blank" class="ext-btn">Intellectual Property India Link</a>
+            <div class="milestones-box" style="margin-top: 20px; padding: 15px; background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 4px;">
+                <h3 style="margin-top: 0; color: #16a34a;">🏅 Key Milestones</h3>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                    <li>Qualified in <strong>GATE 2014</strong></li>
+                    <li>Ratified as Faculty by <strong>JNTUK Kakinada</strong> (17-Oct 2015)</li>
+                    <li>Received prestigious <strong>Pratibha Award (2016-17)</strong> at VIIT, Vizag</li>
+                    <li>Qualified in <strong>APRCET 2018</strong> for Doctoral admissions</li>
+                    <li>Ratified as Faculty by <strong>JNTUH Hyderabad</strong> (October 2022)</li>
+                    <li>Published a textbook title: <strong>"Digital Introduction to Microprocessors"</strong> with BPB Publishers</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TEACHING EXPERIENCE TIMELINE SECTION -->
+        <section id="experience" class="content-section">
+            <h2>Teaching Experience Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2025 - 2026</span>
+                    <h3>Assistant Professor</h3>
+                    <h4>Sandip Foundation's SITRC (Sandip University), Nashik, Maharashtra</h4>
+                    <p>Department of Electrical Engineering (Deputation to AIML). Handled Artificial Intelligence Techniques, Expert Systems, and Advanced Python.</p>
                 </div>
-
-                <div class="pub-block">
-                    <h3><span class="indicator patent-badge">Patent</span> Power Quality Analysis Using IoT</h3>
-                    <p class="pub-meta">Electrical Engineering Domain | Application Number: 202441060301 | August 2024</p>
-                    <a href="http://ipindia.nic.in/index.htm" target="_blank" class="ext-btn">Intellectual Property India Link</a>
+                <div class="timeline-item">
+                    <span class="timeline-date">2023 - 2025</span>
+                    <h3>Assistant Professor</h3>
+                    <h4>Guru Nanak Institute of Technology (A), Hyderabad</h4>
+                    <p>Department of Electrical and Electronics Engineering. Handled advanced core systems and student mentoring configurations.</p>
                 </div>
-
-                <div class="pub-block">
-                    <h3><span class="indicator book-badge">Book Chapter</span> Cyber Security in Smart Grids: Role of Digital Advanced Devices</h3>
-                    <p class="pub-authors">Prof. M Ramalinga Raju, Mr. Adari G V Chiranjeevi</p>
-                    <p class="pub-meta">Published by IGI Global, October 2022 | ISBN: 9781668458273</p>
-                    <p class="pub-doi">DOI: 10.4018/978-1-6684-5827-3.ch002</p>
+                <div class="timeline-item">
+                    <span class="timeline-date">2022 - 2023</span>
+                    <h3>Assistant Professor</h3>
+                    <h4>Malla Reddy Engineering College for Women (A), Secunderabad</h4>
+                    <p>Department of EEE. Managed academic course file preparation, lab assessments, and exam branch coordination roles.</p>
                 </div>
-
-                <div class="pub-block">
-                    <h3><span class="indicator paper-badge">Research Paper</span> Dynamic Stability Enhancement of a Smart Grid Using Artificial Neural Network Based STATCOM</h3>
-                    <p class="pub-meta">International Journal of Science and Technology (INDJST) | Impact Factor: 0.68</p>
-                    <a href="https://indjst.org/articles/dynamic-stability-improvement-of-a-smart-grid-using-neural-network-based-statcom" target="_blank" class="link-text">Read Journal Paper &rarr;</a>
+                <div class="timeline-item">
+                    <span class="timeline-date">2019 - 2021</span>
+                    <h3>Sr. Assistant Professor</h3>
+                    <h4>Aditya College of Engineering, Surampalem, Andhra Pradesh</h4>
+                    <p>Department of EEE. Guided complex undergraduate student major projects and organized engineering workshops.</p>
                 </div>
-
-                <div class="pub-block">
-                    <h3><span class="indicator paper-badge">Research Paper</span> Transient Stability Improvement of Single Machine Infinite Bus System Using Distributed Power Flow Controller</h3>
-                    <p class="pub-meta">International Journal of Pure and Applied Mathematics (IJPAM) | Impact Factor: 0.64</p>
-                    <a href="https://acadpubl.eu/jsi/2017-114-7-ICPCIT-2017/articles/8/27.pdf" target="_blank" class="link-text">Read Conference Paper PDF &rarr;</a>
+                <div class="timeline-item">
+                    <span class="timeline-date">2015 - 2019</span>
+                    <h3>Assistant Professor</h3>
+                    <h4>Vignan's Institute of Information Technology (A), Visakhapatnam</h4>
+                    <p>Department of EEE. Delivered core lectures, managed time-table development pipelines, and engineered accreditation records.</p>
                 </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience" class="content-section">
-                <h2>Teaching Experience Timeline</h2>
-                <div class="work-history">
-                    <div class="work-card">
-                        <div class="work-header">
-                            <h3>Assistant Professor (Electrical Engineering - AIML)</h3>
-                            <span class="work-duration">2025 - 2026</span>
-                        </div>
-                        <p class="company-name">Sandip Institute of Technology and Research Centre, Nashik, Maharashtra</p>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-header">
-                            <h3>Assistant Professor (EEE Department)</h3>
-                            <span class="work-duration">2023 - 2025</span>
-                        </div>
-                        <p class="company-name">Guru Nanak Institute of Technology, Ibrahimpatnam, Hyderabad</p>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-header">
-                            <h3>Assistant Professor (EEE Department)</h3>
-                            <span class="work-duration">2022 - 2023</span>
-                        </div>
-                        <p class="company-name">Malla Reddy Engineering College for Women, Secunderabad</p>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-header">
-                            <h3>Sr. Assistant Professor (EEE Department)</h3>
-                            <span class="work-duration">2019 - 2021</span>
-                        </div>
-                        <p class="company-name">Aditya College of Engineering, Surampalem, Andhra Pradesh</p>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-header">
-                            <h3>Assistant Professor (EEE Department)</h3>
-                            <span class="work-duration">2015 - 2019</span>
-                        </div>
-                        <p class="company-name">Vignan's Institute of Information Technology, Visakhapatnam</p>
-                    </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2011 - 2015</span>
+                    <h3>Assistant Professor</h3>
+                    <h4>Raghu Institute of Technology, Dakamarri, Visakhapatnam</h4>
+                    <p>Department of EEE. Supervised electrical simulation laboratory blocks and introduced automated programming frameworks.</p>
                 </div>
-            </section>
-
-            <!-- Courses Handled Section -->
-            <section id="courses" class="content-section">
-                <h2>Courses Handled &amp; Faculty Domains</h2>
-                <div class="courses-grid">
-                    <div class="course-category-card">
-                        <h3>AI &amp; Computational Logic</h3>
-                        <ul>
-                            <li>Artificial Intelligence Techniques</li>
-                            <li>AI Based Web Design</li>
-                            <li>Introduction to Expert Systems</li>
-                            <li>Advanced Python Programming</li>
-                            <li>Discrete Mathematics and Logic</li>
-                        </ul>
-                    </div>
-                    <div class="course-category-card">
-                        <h3>Core Electrical Engineering</h3>
-                        <ul>
-                            <li>Electro Magnetic Fields</li>
-                            <li>Control Systems</li>
-                            <li>Power System Protection</li>
-                            <li>Power System Analysis</li>
-                            <li>High Voltage Engineering</li>
-                        </ul>
-                    </div>
-                    <div class="course-category-card">
-                        <h3>Digital Systems &amp; Hardware</h3>
-                        <ul>
-                            <li>Microprocessors and Microcontrollers</li>
-                            <li>Digital Logic Design</li>
-                            <li>Digital Controllers</li>
-                            <li>Basic Electrical &amp; Electronics Engineering</li>
-                            <li>Non-Conventional Sources of Energy</li>
-                        </ul>
-                    </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2007 - 2011</span>
+                    <h3>Assistant Professor</h3>
+                    <h4>Aditya Engineering College, Surampalem, East Godavari</h4>
+                    <p>Initial professional academic teaching appointment within the Department of Electrical and Electronics Engineering.</p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="content-section">
-                <h2>Contact &amp; Profiles</h2>
-                <div class="contact-grid">
-                    <div class="contact-card-info">
-                        <h3>Direct Connection Details</h3>
-                        <p><strong>Mobile:</strong> +91 9949163002</p>
-                        <p><strong>Email:</strong> <a href="mailto:chiranjeevi210@gmail.com">chiranjeevi210@gmail.com</a></p>
-                        <p><strong>Address:</strong> 4-243/1/4, BC Colony, Vepagunta, Visakhapatnam, Andhra Pradesh, India - 530047</p>
-                    </div>
-                    <div class="contact-card-info">
-                        <h3>Academic Profiles</h3>
-                        <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?hl=en&user=o0nn0UoAAAAJ" target="_blank">View Citation Index</a></p>
-                        <p><strong>ORCID ID:</strong> 0000-0002-7895-407X</p>
-                        <p><strong>Scopus Author ID:</strong> 58316331900</p>
-                        <p><strong>IEEE Member ID:</strong> 100444351</p>
-                    </div>
-                </div>
-                
-                <!-- Dynamic JSON Mock Client Interface Integration -->
-                <div class="json-injection-box" style="margin-top: 40px; padding: 20px; background: #f0f4f8; border-radius: 8px;">
-                    <h3>Dynamic Data Engine Verification</h3>
-                    <p>Click below to use AJAX/JavaScript client simulation parsing data from runtime memory arrays dynamically.</p>
-                    <button id="load-json-data" class="btn btn-primary" style="margin-top:10px;">Fetch Dynamic Works Inventory</button>
-                    <div id="json-output" style="margin-top:15px; font-family: monospace; font-size: 0.9em; white-space: pre-wrap; background: #fff; padding: 10px; border:1px solid #ccc; display:none;"></div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2026 G V Chiranjeevi Adari. All rights reserved.</p>
-            <p>Built with native clean layout CSS grid framework configurations.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- CERTIFICATIONS & SKILLS SECTION -->
+        <section id="certifications" class="content-section">
+            <h2>Certifications & Professional Skills</h2>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Credentials</button>
