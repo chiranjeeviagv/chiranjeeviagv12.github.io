@@ -1,21 +1,16 @@
+### 3. The Logic Engine (`script.js`)
+Save this file as `script.js`. It runs the state engine for top scroll-spy tracking, mobile responsive navigation, categorical certification data sorting, and simulates data injection.
+
+```javascript
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Responsive Navigation Drawer Toggle Handling
     const mobileMenuBtn = document.getElementById('mobile-menu');
     const navLinksList = document.querySelector('.nav-links');
 
-    if (mobileMenuBtn && navLinksList) {
+    if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinksList.classList.toggle('active');
             mobileMenuBtn.classList.toggle('open');
-        });
-
-        // Close dropdown menu fluidly when a navigation link layout anchor is clicked
-        const navigationAnchors = navLinksList.querySelectorAll('a');
-        navigationAnchors.forEach(anchor => {
-            anchor.addEventListener('click', () => {
-                navLinksList.classList.remove('active');
-                mobileMenuBtn.classList.remove('open');
-            });
         });
     }
 
@@ -23,64 +18,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const certCards = document.querySelectorAll('.cert-card');
 
-    if (filterButtons.length > 0 && certCards.length > 0) {
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Manage Active Styling Classes cleanly
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Manage Active Styling Classes
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-                const selectedCategory = btn.getAttribute('data-filter');
+            const selectedCategory = btn.getAttribute('data-filter');
 
-                // Toggle Card Visibilities based on selected data attribute filter pipelines
-                certCards.forEach(card => {
-                    if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+            // Toggle Card Visibilities based on selected data attribute filter pipelines
+            certCards.forEach(card => {
+                if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         });
-    }
+    });
 
     // 3. Viewport Scroll Monitor and Active Navigation State Engine for Desktop Sidebar
     const sections = document.querySelectorAll('.content-section');
     const sidebarItems = document.querySelectorAll('.sidebar-item');
 
-    if (sections.length > 0 && sidebarItems.length > 0) {
-        window.addEventListener('scroll', () => {
-            let activeId = '';
-            const scrollBuffer = window.scrollY + 150; // Dynamic offset compensation
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollBuffer >= sectionTop && scrollBuffer < (sectionTop + sectionHeight)) {
-                    activeId = section.getAttribute('id');
-                }
-            });
-
-            // Handle bottom bounds execution boundary edge cases smoothly
-            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
-                activeId = sections[sections.length - 1].getAttribute('id');
+    window.addEventListener('scroll', () => {
+        let activeId = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Capture bounding offsets inside scroll space pipelines
+            if (window.scrollY >= (sectionTop - 120)) {
+                activeId = section.getAttribute('id');
             }
-
-            sidebarItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === `#${activeId}`) {
-                    item.classList.add('active');
-                }
-            });
         });
-    }
+
+        sidebarItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${activeId}`) {
+                item.classList.add('active');
+            }
+        });
+    });
 
     // 4. Mock JSON Client Injection System Simulation Engine
     const jsonLoadBtn = document.getElementById('load-json-data');
     const jsonOutputContainer = document.getElementById('json-output');
 
-    if (jsonLoadBtn && jsonOutputContainer) {
+    if (jsonLoadBtn) {
         jsonLoadBtn.addEventListener('click', () => {
             // Simulating parsing of an external decoupled configuration metadata layout
             const futurePlansMockJSON = {
@@ -94,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 "acceptedJournalPapers": [
                     {
-                        "title": "Reputed Journal Entry - Power System Grid Grid Integration Optimization",
+                        "title": "Power System Grid Integration Optimization & Dynamic Protection",
                         "status": "Accepted for Publication",
                         "milestone": "Ph.D Track Progression Framework"
                     }
