@@ -87,6 +87,7 @@ ul {
     cursor: pointer;
     background: transparent;
     border: none;
+    padding: 5px;
 }
 
 .menu-toggle .bar {
@@ -94,7 +95,18 @@ ul {
     height: 3px;
     background-color: var(--text-main);
     margin: 4px 0;
-    transition: 0.4s;
+    transition: var(--transition-speed);
+}
+
+/* Animated Menu Toggle Transformation Effects */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Hero Frame Graphics */
@@ -114,12 +126,14 @@ ul {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 800;
+    letter-spacing: -0.025em;
 }
 
 .subtitle {
     font-size: 1.5rem;
     color: #93c5fd;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .tagline {
@@ -127,6 +141,7 @@ ul {
     font-size: 1.1rem;
     color: #cbd5e1;
     margin-bottom: 30px;
+    line-height: 1.7;
 }
 
 .hero-ctas {
@@ -142,6 +157,7 @@ ul {
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-speed);
+    text-align: center;
 }
 
 .btn-primary {
@@ -196,6 +212,8 @@ ul {
     color: var(--text-muted);
     border-left: 3px solid transparent;
     font-weight: 500;
+    border-radius: 0 4px 4px 0;
+    transition: all var(--transition-speed);
 }
 
 .sidebar-item:hover, .sidebar-item.active {
@@ -207,6 +225,7 @@ ul {
 /* Content Frame Structuring */
 .content-area {
     flex: 1;
+    min-width: 0; /* Prevents flex box container blowout elements from wrapping */
 }
 
 .content-section {
@@ -253,6 +272,7 @@ ul {
 .strengths-box li {
     margin-bottom: 8px;
     font-size: 0.95rem;
+    color: var(--text-main);
 }
 
 /* Component Architectures: Education Timeline */
@@ -306,6 +326,7 @@ ul {
     font-size: 0.8rem;
     font-weight: 600;
     border-radius: 4px;
+    margin-top: 4px;
 }
 
 .badge-success { background-color: #d1fae5; color: #065f46; }
@@ -326,6 +347,7 @@ ul {
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
+    color: var(--text-muted);
     transition: all var(--transition-speed);
 }
 
@@ -373,6 +395,7 @@ ul {
 .cert-card h3 {
     font-size: 1.05rem;
     margin-bottom: 6px;
+    color: var(--text-main);
 }
 
 .cert-meta {
@@ -399,11 +422,12 @@ ul {
     border-radius: 4px;
     font-size: 0.88rem;
     font-weight: 500;
+    border: 1px solid #dbeafe;
 }
 
 /* Publications Output Block Styling */
 .pub-block {
-    padding: 15px 0;
+    padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -411,33 +435,41 @@ ul {
     border-bottom: none;
 }
 
+.pub-block:first-child {
+    padding-top: 0;
+}
+
 .indicator {
     font-size: 0.75rem;
     font-weight: 700;
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 4px;
     margin-right: 8px;
-    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
 .patent-badge { background-color: #fef3c7; color: #d97706; }
 .book-badge { background-color: #e0f2fe; color: #0284c7; }
-.paper-badge { background-color: #e11d48; color: #ffffff; }
+.paper-badge { background-color: #ffe4e6; color: #b91c1c; }
 
 .pub-block h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     margin-bottom: 6px;
+    color: var(--text-main);
 }
 
 .pub-meta {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
+    margin-bottom: 4px;
 }
 
 .pub-doi {
     font-family: monospace;
     font-size: 0.85rem;
     color: #ef4444;
+    margin-bottom: 6px;
 }
 
 .ext-btn {
@@ -445,9 +477,11 @@ ul {
     margin-top: 8px;
     font-size: 0.85rem;
     background-color: #f3f4f6;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 4px;
     color: var(--text-main);
+    font-weight: 500;
+    transition: background-color var(--transition-speed);
 }
 
 .ext-btn:hover {
@@ -479,94 +513,3 @@ ul {
     padding-left: 20px;
 }
 
-.course-category-card li {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    color: var(--text-muted);
-}
-
-/* Experience Cards Box */
-.work-card {
-    background-color: #ffffff;
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.work-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.work-duration {
-    font-weight: 600;
-    color: var(--secondary-color);
-}
-
-.company-name {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* Contact Module Systems */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.contact-card-info p {
-    margin-bottom: 10px;
-}
-
-/* Footer Layout Structure Elements */
-footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 60px;
-    font-size: 0.9rem;
-}
-
-.footer-container p {
-    margin-bottom: 6px;
-}
-
-/* Responsive Component Transformations */
-@media (max-width: 900px) {
-    .main-container {
-        flex-direction: column;
-    }
-    .sidebar {
-        display: none; /* Hide sticky index navigation on tablets and mobile screens */
-    }
-    .about-grid, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .nav-links {
-        display: none; /* Mobile optimization requires drawer toggle */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: var(--bg-white);
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .menu-toggle {
-        display: flex;
-    }
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-}
