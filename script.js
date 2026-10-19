@@ -38,7 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cachedLayout = localStorage.getItem('cvLayoutMode') || 'academic';
     setViewLayout(cachedLayout);
 
-    // SIMPLE CONTACT FORM HANDLER
+    // NATIVE PRINT CONTROLLER
+    const printButtons = document.querySelectorAll('.print-trigger');
+    printButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            window.print();
+        });
+    });
+
+    // CONTACT FORM HANDLER
     const form = document.getElementById('contactForm');
     const feedback = document.getElementById('formFeedback');
 
