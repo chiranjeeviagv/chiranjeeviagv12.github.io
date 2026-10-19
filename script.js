@@ -1,102 +1,54 @@
-### 3. The Logic Engine (`script.js`)
-Save this file as `script.js`. It runs the state engine for top scroll-spy tracking, mobile responsive navigation, categorical certification data sorting, and simulates data injection.
-
-```javascript
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Responsive Navigation Drawer Toggle Handling
-    const mobileMenuBtn = document.getElementById('mobile-menu');
-    const navLinksList = document.querySelector('.nav-links');
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinksList.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('open');
-        });
-    }
-
-    // 2. Client-side Interactive Filter Pipeline Architecture for Certifications
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Manage Active Styling Classes
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const selectedCategory = btn.getAttribute('data-filter');
-
-            // Toggle Card Visibilities based on selected data attribute filter pipelines
-            certCards.forEach(card => {
-                if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
+    
+    // THEME CONFIGURATION
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
     });
 
-    // 3. Viewport Scroll Monitor and Active Navigation State Engine for Desktop Sidebar
-    const sections = document.querySelectorAll('.content-section');
-    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    // LAYOUT SWITCHER STATE ENGINE
+    const container = document.getElementById('portfolio-container');
+    const academicBtn = document.getElementById('btn-layout-academic');
+    const industryBtn = document.getElementById('btn-layout-industry');
 
-    window.addEventListener('scroll', () => {
-        let activeId = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Capture bounding offsets inside scroll space pipelines
-            if (window.scrollY >= (sectionTop - 120)) {
-                activeId = section.getAttribute('id');
-            }
-        });
-
-        sidebarItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === `#${activeId}`) {
-                item.classList.add('active');
-            }
-        });
-    });
-
-    // 4. Mock JSON Client Injection System Simulation Engine
-    const jsonLoadBtn = document.getElementById('load-json-data');
-    const jsonOutputContainer = document.getElementById('json-output');
-
-    if (jsonLoadBtn) {
-        jsonLoadBtn.addEventListener('click', () => {
-            // Simulating parsing of an external decoupled configuration metadata layout
-            const futurePlansMockJSON = {
-                "academicYear": 2026,
-                "forthcomingBooks": [
-                    {
-                        "title": "Logical Introduction to Digital Electronics",
-                        "publisher": "BPB Publications",
-                        "status": "In Editing Stage"
-                    }
-                ],
-                "acceptedJournalPapers": [
-                    {
-                        "title": "Power System Grid Integration Optimization & Dynamic Protection",
-                        "status": "Accepted for Publication",
-                        "milestone": "Ph.D Track Progression Framework"
-                    }
-                ],
-                "institutionalWorkshopsAttended": [
-                    {
-                        "title": "FDP on OBE Focused Curriculum Design",
-                        "venue": "IQAC Cell, Sandip University, Nashik",
-                        "timeline": "November 2026"
-                    }
-                ]
-            };
-
-            jsonOutputContainer.textContent = JSON.stringify(futurePlansMockJSON, null, 4);
-            jsonOutputContainer.style.display = 'block';
-            jsonLoadBtn.textContent = "Works Inventory Loaded Successfully";
-            jsonLoadBtn.style.backgroundColor = "#065f46";
-        });
+    function setViewLayout(mode) {
+        if (mode === 'academic') {
+            container.className = 'layout-academic';
+            academicBtn.classList.add('active');
+            industryBtn.classList.remove('active');
+            localStorage.setItem('cvLayoutMode', 'academic');
+        } else {
+            container.className = 'layout-industry';
+            industryBtn.classList.add('active');
+            academicBtn.classList.remove('active');
+            localStorage.setItem('cvLayoutMode', 'industry');
+        }
     }
+
+    academicBtn.addEventListener('click', () => setViewLayout('academic'));
+    industryBtn.addEventListener('click', () => setViewLayout('industry'));
+
+    // Persistent Layout choice caching
+    const cachedLayout = localStorage.getItem('cvLayoutMode') || 'academic';
+    setViewLayout(cachedLayout);
+
+    // SIMPLE CONTACT FORM HANDLER
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        feedback.innerText = "Thank you! Your inquiry was successfully recorded.";
+        feedback.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => {
+            feedback.classList.add('hidden');
+        }, 4000);
+    });
 });
