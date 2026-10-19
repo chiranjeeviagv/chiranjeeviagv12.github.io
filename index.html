@@ -8,8 +8,8 @@
 </head>
 <body>
 
-    <!-- TOP GLOBAL NAVIGATION BAR -->
-    <header class="control-panel">
+    <!-- TOP GLOBAL NAVIGATION BAR (Hidden during Print) -->
+    <header class="control-panel no-print">
         <div class="logo">GVC Adari Portfolio</div>
         <div class="controls">
             <!-- Theme Settings Toggle Switch -->
@@ -34,7 +34,10 @@
             <!-- Academic Profile Hero Header Section -->
             <section class="hero-section academic-theme">
                 <div class="hero-container">
-                    <h1>G V Chiranjeevi Adari</h1>
+                    <div class="hero-header-flex">
+                        <h1>G V Chiranjeevi Adari</h1>
+                        <button class="btn-download no-print print-trigger">📥 Download Print-Ready CV</button>
+                    </div>
                     <p class="subtitle">Assistant Professor | Electrical Engineering Researcher</p>
                     <p class="objective"><strong>Career Objective:</strong> An Electrical Engineer and Software professional, forever a student, dreaming for a career in a nice environment which is technically and ethically developed.</p>
                     <div class="contact-links">
@@ -150,6 +153,3 @@
                                 <p>• Scopus ID: 58316331900</p>
                                 <p>• ORCID ID: 0000-0002-7895-407X</p>
                             </div>
-                            <div class="mini-card">
-                                <h5>Academic Mentorship</h5>
-                                <p>• B.Tech Projects Guided: 08</p>
