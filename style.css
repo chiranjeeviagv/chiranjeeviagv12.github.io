@@ -1,19 +1,26 @@
-
-### 2. The Presentation Architecture (`style.css`)
-Save this file as `style.css`. It manages layout distributions, typography rules, interactive hover states, filtering color tokens for technical stacks, and media breaks.
-
+### 2. `style.css`
 ```css
-/* Global Core Variable Architectures */
 :root {
-    --primary-color: #1e3a8a;
-    --secondary-color: #3b82f6;
-    --accent-color: #f59e0b;
-    --text-main: #1f2937;
-    --text-muted: #4b5563;
-    --bg-light: #f9fafb;
-    --bg-white: #ffffff;
-    --border-color: #e5e7eb;
-    --transition-speed: 0.3s;
+    --bg-primary: #f8f9fa;
+    --bg-surface: #ffffff;
+    --text-main: #212529;
+    --text-muted: #6c757d;
+    --accent: #007bff;
+    --accent-hover: #0056b3;
+    --border-color: #dee2e6;
+    --highlight: #e7f1ff;
+    --transition-speed: 0.25s;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-surface: #1e1e1e;
+    --text-main: #f8f9fa;
+    --text-muted: #a0aec0;
+    --accent: #375a7f;
+    --accent-hover: #2b4764;
+    --border-color: #333333;
+    --highlight: #223344;
 }
 
 * {
@@ -22,507 +29,189 @@ Save this file as `style.css`. It manages layout distributions, typography rules
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
     color: var(--text-main);
-    background-color: var(--bg-light);
     line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    padding-top: 70px;
 }
 
-a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color var(--transition-speed);
-}
-
-a:hover {
-    color: var(--primary-color);
-}
-
-ul {
-    list-style: none;
-}
-
-/* Navbar Interface Elements */
-.navbar {
-    position: sticky;
+/* NAVIGATION AND CONTROLS */
+.control-panel {
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    background-color: var(--bg-white);
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
+    padding: 0 2rem;
+    z-index: 1000;
 }
 
-.nav-logo {
+.logo {
     font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
-.nav-links {
+.controls {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
+    align-items: center;
 }
 
-.nav-links a {
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
+button {
     cursor: pointer;
-    background: transparent;
-    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    font-weight: 500;
+    transition: all var(--transition-speed);
 }
 
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-main);
-    margin: 4px 0;
-    transition: 0.4s;
+button:hover {
+    background-color: var(--highlight);
 }
 
-/* Hero Frame Graphics */
-.hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-    color: var(--bg-white);
-    padding: 80px 20px;
-    text-align: center;
+.btn-layout.active {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
 }
 
-.hero-content {
-    max-width: 800px;
+/* LAYOUT ENGINE CONTROLS (THE CORE LOGIC) */
+/* When container is Academic, hide Industry blocks */
+#portfolio-container.layout-academic .industry-element {
+    display: none !important;
+}
+/* When container is Industry, hide Academic blocks */
+#portfolio-container.layout-industry .academic-element {
+    display: none !important;
+}
+
+/* CONTAINER STRUCTURE */
+.hero-section {
+    background-color: var(--bg-surface);
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.hero-container {
+    max-width: 1140px;
     margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    font-weight: 800;
 }
 
 .subtitle {
-    font-size: 1.5rem;
-    color: #93c5fd;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
 }
 
-.tagline {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    margin-bottom: 30px;
-}
-
-.hero-ctas {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-speed);
-}
-
-.btn-primary {
-    background-color: var(--secondary-color);
-    color: var(--bg-white);
-}
-
-.btn-primary:hover {
-    background-color: #2563eb;
-    color: var(--bg-white);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--bg-white);
-    border: 2px solid var(--bg-white);
-}
-
-.btn-secondary:hover {
-    background-color: var(--bg-white);
-    color: var(--primary-color);
-}
-
-/* Structural Split System Grid Layout */
-.main-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 40px;
-}
-
-/* Sidebar Framework Layout */
-.sidebar {
-    width: 260px;
-    position: sticky;
-    top: 90px;
-    height: fit-content;
-    background: var(--bg-white);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
-
-.sidebar-links li {
-    margin-bottom: 12px;
-}
-
-.sidebar-item {
-    display: block;
-    padding: 8px 12px;
+.objective {
+    font-size: 1rem;
+    max-width: 800px;
     color: var(--text-muted);
-    border-left: 3px solid transparent;
-    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
-.sidebar-item:hover, .sidebar-item.active {
-    color: var(--primary-color);
-    background-color: #f3f4f6;
-    border-left-color: var(--secondary-color);
-}
-
-/* Content Frame Structuring */
-.content-area {
-    flex: 1;
-    min-width: 0;
-}
-
-.content-section {
-    background-color: var(--bg-white);
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 30px;
-}
-
-.content-section h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eff6ff;
-    padding-bottom: 10px;
-}
-
-/* Component Architectures: About Layout */
-.about-grid {
+.content-grid {
+    max-width: 1140px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 20px;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    padding: 0 1rem 4rem 1rem;
 }
 
-.strengths-box {
-    background-color: #f8fafc;
-    padding: 20px;
-    border-radius: 6px;
+/* CARDS & UI COMPONENTS */
+.card, .section-block, .mini-card, .credential-card {
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.strengths-box h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
+.highlight-card {
+    border-left: 4px solid var(--accent);
 }
 
-.strengths-box ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.strengths-box li {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-}
-
-/* Component Architectures: Education Timeline */
-.timeline {
-    position: relative;
-    padding-left: 30px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 9px;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background-color: var(--border-color);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: -26px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    border: 2px solid var(--bg-white);
-}
-
-.timeline-date {
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 4px;
-}
-
-.institution {
-    color: var(--text-muted);
-    font-style: italic;
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-}
-
-.badge {
-    display: inline-block;
-    padding: 3px 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border-radius: 4px;
-}
-
-.badge-success { background-color: #d1fae5; color: #065f46; }
-.badge-info { background-color: #e0f2fe; color: #0369a1; }
-
-/* Filter System Controls */
-.filter-controls {
+.tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-.filter-btn {
-    padding: 6px 14px;
-    background-color: #f3f4f6;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all var(--transition-speed);
+.tags span {
+    background-color: var(--highlight);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    border-color: var(--primary-color);
-}
-
-/* Certifications Layout Dynamic Architecture */
-.certifications-grid {
+.grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
-.cert-card {
-    background-color: var(--bg-white);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 6px;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-}
-
-.cert-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.cert-provider {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 3px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.ibm-color { background-color: #e0e7ff; color: #3730a3; }
-.ms-color { background-color: #fef3c7; color: #92400e; }
-.google-color { background-color: #d1fae5; color: #065f46; }
-.nptel-color { background-color: #fce7f3; color: #9d174d; }
-
-.cert-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-}
-
-.cert-meta {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-}
-
-.cert-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.skills-tags {
+/* FORM ELEMENTS */
+.contact-form {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.tag {
-    background-color: #eff6ff;
-    color: var(--primary-color);
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 0.88rem;
-    font-weight: 500;
-}
-
-/* Publications Output Block Styling */
-.pub-block {
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.pub-block:last-child {
-    border-bottom: none;
-}
-
-.indicator {
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-
-.patent-badge { background-color: #fef3c7; color: #d97706; }
-.book-badge { background-color: #e0f2fe; color: #0284c7; }
-.paper-badge { background-color: #e11d48; color: #ffffff; }
-
-.pub-block h3 {
-    font-size: 1.15rem;
-    margin-bottom: 6px;
-}
-
-.pub-meta {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.pub-doi {
-    font-family: monospace;
-    font-size: 0.85rem;
-    color: #ef4444;
-}
-
-.ext-btn {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 0.85rem;
-    background-color: #f3f4f6;
-    padding: 4px 10px;
-    border-radius: 4px;
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
     color: var(--text-main);
+    border-radius: 4px;
 }
 
-.ext-btn:hover {
-    background-color: var(--border-color);
+.btn-submit {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-weight: bold;
 }
 
-/* Grid Layout Structures for Courses section */
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+.btn-submit:hover {
+    background-color: var(--accent-hover);
 }
 
-.course-category-card {
-    background-color: #f8fafc;
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 6px;
+.hidden { display: none; }
+
+.form-feedback {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    background-color: #d4edda;
+    color: #155724;
 }
 
-.course-category-card h3 {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    margin-bottom: 12px;
-}
-
-.course-category-card ul {
-    list-style: square;
-    padding-left: 20px;
-}
-
-.course-category-card li {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    color: var(--text-muted);
-}
-
-/* Experience Cards Box */
-.work-card {
-    background-color: #ffffff;
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.work-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.work-duration {
-    font-weight: 600;
-    color: var(--secondary-color);
-}
-
-.company-name {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* Contact Module Systems */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.contact-card-info p {
-    margin-bottom: 10px;
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .control-panel {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+    body { padding-top: 120px; }
 }
