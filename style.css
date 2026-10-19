@@ -86,15 +86,31 @@ button:hover {
     border-color: var(--accent);
 }
 
-/* LAYOUT ENGINE CONTROLS (THE CORE LOGIC) */
-/* When container is Academic, hide Industry blocks */
-#portfolio-container.layout-academic .industry-element {
-    display: none !important;
+.hero-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
-/* When container is Industry, hide Academic blocks */
-#portfolio-container.layout-industry .academic-element {
-    display: none !important;
+
+.btn-download {
+    background-color: var(--bg-surface);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-weight: bold;
 }
+
+.btn-download:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* LAYOUT ENGINE CONTROLS */
+#portfolio-container.layout-academic #academic-cv-view { display: block !important; }
+#portfolio-container.layout-academic #industry-cv-view { display: none !important; }
+#portfolio-container.layout-industry #industry-cv-view { display: block !important; }
+#portfolio-container.layout-industry #academic-cv-view { display: none !important; }
 
 /* CONTAINER STRUCTURE */
 .hero-section {
@@ -103,6 +119,9 @@ button:hover {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 2rem;
 }
+
+.hero-section.academic-theme { border-left: 6px solid #007bff; }
+.hero-section.industry-theme { border-left: 6px solid #28a745; }
 
 .hero-container {
     max-width: 1140px;
@@ -132,7 +151,7 @@ button:hover {
 }
 
 /* CARDS & UI COMPONENTS */
-.card, .section-block, .mini-card, .credential-card {
+.card, .section-block, .mini-card, .credential-item {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -140,9 +159,7 @@ button:hover {
     margin-bottom: 1.5rem;
 }
 
-.highlight-card {
-    border-left: 4px solid var(--accent);
-}
+.highlight-card { border-left: 4px solid var(--accent); }
 
 .tags {
     display: flex;
@@ -162,6 +179,25 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+}
+
+ul { padding-left: 1.2rem; }
+.clean-list { list-style: none; padding-left: 0; }
+.clean-list li { margin-bottom: 0.75rem; }
+
+.credential-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.date-badge {
+    background-color: var(--highlight);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 /* FORM ELEMENTS */
@@ -189,10 +225,6 @@ button:hover {
     font-weight: bold;
 }
 
-.btn-submit:hover {
-    background-color: var(--accent-hover);
-}
-
 .hidden { display: none; }
 
 .form-feedback {
@@ -203,15 +235,45 @@ button:hover {
     color: #155724;
 }
 
+/* ==========================================================================
+   PRINT ENGINE STYLES (window.print overrides)
+   ========================================================================== */
+@media print {
+    body {
+        padding-top: 0 !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12pt;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    .content-grid {
+        display: block !important;
+        padding: 0 !important;
+    }
+    
+    .card, .section-block, .mini-card, .credential-item {
+        border: none !important;
+        border-bottom: 1px solid #ccc !important;
+        page-break-inside: avoid;
+        background: transparent !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .hero-section {
+        border: none !important;
+        border-bottom: 2px solid #000 !important;
+        padding: 1rem 0 !important;
+        background: transparent !important;
+    }
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-    .control-panel {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem;
-    }
-    body { padding-top: 120px; }
+    .content-grid { grid-template-columns: 1fr; }
+    .control-panel { flex-direction: column; height: auto; padding: 1rem; }
+    body { padding-top: 140px; }
 }
