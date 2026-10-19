@@ -3,176 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G V Chiranjeevi Adari | Portfolio & CV</title>
+    <title>G V Chiranjeevi Adari | Professional Portfolios</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CONTROL HEADER -->
+    <!-- TOP GLOBAL NAVIGATION BAR -->
     <header class="control-panel">
-        <div class="logo">GVCA Portfolio</div>
+        <div class="logo">GVC Adari Portfolio</div>
         <div class="controls">
-            <!-- Theme Toggle -->
+            <!-- Theme Settings Toggle Switch -->
             <button id="theme-toggle" class="btn-toggle">🌓 Dark Mode</button>
             
-            <!-- Layout Switcher Controls -->
+            <!-- Dual Separated CV Layout Selectors -->
             <div class="layout-buttons">
-                <button id="btn-layout-academic" class="btn-layout active">🎓 Academic CV View</button>
-                <button id="btn-layout-industry" class="btn-layout">💻 Tech & AI Developer View</button>
+                <button id="btn-layout-academic" class="btn-layout active">🎓 View Academic &amp; Research CV</button>
+                <button id="btn-layout-industry" class="btn-layout">💻 View Tech &amp; AI Developer CV</button>
             </div>
         </div>
     </header>
 
-    <!-- CORE WRAPPER -->
+    <!-- CORE CONTAINER PORTFOLIO WRAPPER -->
     <main id="portfolio-container" class="layout-academic">
         
-        <!-- HERO SECTION (Shared across views) -->
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="hero-text">
-                    <h1>G V Chiranjeevi Adari</h1>
-                    <p class="subtitle">Electrical Engineer &amp; Software Professional</p>
-                    <p class="objective academic-element"><strong>Objective:</strong> Forever a student, dreaming of a career in a technically and ethically developed environment.</p>
-                    <p class="objective industry-element"><strong>Objective:</strong> To grow as a professional by contributing technical skills for organizational development and self-improvement.</p>
-                    <div class="contact-links">
-                        <span>📱 9949163002</span> | 
-                        <span>✉️ chiranjeevi210@gmail.com</span> |
-                        <span>📍 Visakhapatnam, AP</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TWO COLUMN MASTER CONTENT -->
-        <div class="content-grid">
+        <!-- ========================================== -->
+        <!-- OPTION 1: SEPARATE ACADEMIC & RESEARCH CV  -->
+        <!-- ========================================== -->
+        <div id="academic-cv-view" class="cv-view-wrapper">
             
-            <!-- LEFT COLUMN / SIDEBAR -->
-            <aside class="sidebar">
-                <!-- Education Summary (Universal but styled natively) -->
-                <div class="card">
-                    <h3>📚 Educational Summary</h3>
-                    <ul class="clean-list">
-                        <li><strong>Ph.D (Continuing, Part-time)</strong> - Power Systems (Smart Grid), JNTUK Kakinada</li>
-                        <li><strong>M.Tech (High Voltage Engineering)</strong> - JNTU Kakinada (2012) | 72% Distinction</li>
-                        <li><strong>B.Tech (EEE)</strong> - Chaitanya Engg. College / JNTUH (2007) | 71.63% Distinction</li>
-                        <li><strong>Intermediate (MPC)</strong> - Gayatri Junior College (2003) | 94.1%</li>
-                        <li><strong>SSC</strong> - ZP High School, Jami (2001) | 89.96%</li>
-                    </ul>
-                </div>
-
-                <!-- Academic Milestones (Prioritized in Academic View) -->
-                <div class="card academic-element">
-                    <h3>🏆 Academic Milestones</h3>
-                    <ul class="bullet-list">
-                        <li>Pratibha Award Winner (2016-17) at VIIT</li>
-                        <li>Ratified by JNTUH (Oct 2022) &amp; JNTUK (Oct 2015)</li>
-                        <li>Qualified in GATE 2014 &amp; APRCET 2018 Doctoral Entrance</li>
-                    </ul>
-                </div>
-
-                <!-- Technical Skills (Prioritized in Industry View) -->
-                <div class="card industry-element highlight-card">
-                    <h3>⚡ Core Tech Stack</h3>
-                    <div class="tags">
-                        <span>Advanced Python</span><span>JavaScript</span><span>React</span><span>Node.js</span>
-                        <span>Express</span><span>MongoDB</span><span>Docker</span><span>Kubernetes</span>
-                        <span>Azure AI</span><span>Flask</span><span>Java basics</span><span>Matlab</span>
+            <!-- Academic Profile Hero Header Section -->
+            <section class="hero-section academic-theme">
+                <div class="hero-container">
+                    <h1>G V Chiranjeevi Adari</h1>
+                    <p class="subtitle">Assistant Professor | Electrical Engineering Researcher</p>
+                    <p class="objective"><strong>Career Objective:</strong> An Electrical Engineer and Software professional, forever a student, dreaming for a career in a nice environment which is technically and ethically developed.</p>
+                    <div class="contact-links">
+                        <span>📱 Phone: 9949163002</span> | 
+                        <span>✉️ Email: chiranjeevi210@gmail.com</span> |
+                        <span>📍 Address: 4-243/1/4, BC Colony, Vepagunta, Visakhapatnam-530047</span>
                     </div>
                 </div>
+            </section>
 
-                <!-- External Profiles -->
-                <div class="card">
-                    <h3>🔗 Research Profiles</h3>
-                    <p>Scopus Author ID: <a href="#">58316331900</a></p>
-                    <p>ORCID ID: <a href="#">0000-0002-7895-407X</a></p>
-                    <p><a href="https://google.com" target="_blank">Google Scholar Profile</a></p>
-                    <p><a href="https://youtu.be" target="_blank">🎥 Watch Sample Lecture Video</a></p>
-                </div>
-            </aside>
-
-            <!-- RIGHT COLUMN / MAIN PANEL -->
-            <div class="main-content">
+            <!-- Academic Multi-Column Body Layout -->
+            <div class="content-grid">
                 
-                <!-- VIEW 1: ACADEMIC LAYOUT CONTENT -->
-                <div class="academic-element">
-                    <section class="section-block">
-                        <h2>📖 Research &amp; Publications</h2>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <h4>Book Published (2026)</h4>
-                                <p><em>Logical Introduction to Digital Electronics</em> / <em>Digital introduction to Microprocessors</em> - Published by BPB Publishers.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <h4>IPR / Patents Published</h4>
-                                <ul>
-                                    <li><strong>Smart Medical Diagnosis System</strong> using IoT driven Machine Learning &amp; Big Data Analytics (Bio-Medical Engineering Field).</li>
-                                    <li><strong>Power Quality Analysis Using IoT</strong> (Application Ref: 202441060301).</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-item">
-                                <h4>Selected Journal Papers</h4>
-                                <p>• "Fuzzy based Unified Control and Power Management Scheme for PV Battery based Hybrid Micro Grids" (IJAEMA, 2022)</p>
-                                <p>• "Dynamic stability Enhancement of a Smart Grid Using Artificial Neural Network Based STATCOM" (INDJST, 2016)</p>
-                            </div>
-                        </div>
-                    </section>
+                <!-- Left Information Column/Sidebar for Academic -->
+                <aside class="sidebar">
+                    <div class="card">
+                        <h3>📚 Academic Qualifications</h3>
+                        <ul class="clean-list">
+                            <li><strong>Ph.D (Power Systems - Smart Grid)</strong><br>JNTUK Kakinada (Continuing in part-time mode)</li>
+                            <li><strong>M.Tech (High Voltage Engineering)</strong><br>JNTU Kakinada (2012) | First Class with Distinction (72%)</li>
+                            <li><strong>B.Tech (Electrical &amp; Electronics Engineering)</strong><br>Chaitanya Engg. College / JNTUH (2007) | Distinction (71.63%)</li>
+                            <li><strong>Intermediate (MPC)</strong><br>Gayatri Junior College, Vizianagaram (2003) | First Class (94.1%)</li>
+                            <li><strong>Secondary School Certificate (SSC)</strong><br>ZP High School, Jami (2001) | First Class (89.96%)</li>
+                        </ul>
+                    </div>
 
-                    <section class="section-block">
-                        <h2>💼 Teaching Experience (9+ Years Post-M.Tech)</h2>
-                        <div class="grid-layout">
-                            <div class="mini-card">
-                                <h5>Sandip Foundation (SITRC)</h5>
-                                <p class="meta">2025 - 2026 | Assistant Professor (EE - Deputed to AIML)</p>
-                            </div>
-                            <div class="mini-card">
-                                <h5>Guru Nanak Institute of Technology</h5>
-                                <p class="meta">2023 - 2025 | Assistant Professor (EEE)</p>
-                            </div>
-                            <div class="mini-card">
-                                <h5>Vignan's Institute of Information Technology</h5>
-                                <p class="meta">2015 - 2019 | Assistant Professor (EEE)</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+                    <div class="card highlight-card">
+                        <h3>🏆 Milestones &amp; Accreditations</h3>
+                        <ul class="bullet-list">
+                            <li>Pratibha Award Recipient (2016-17) at VIIT, Vizag.</li>
+                            <li>Officially Ratified by JNTUH, Hyderabad (October 2022).</li>
+                            <li>Officially Ratified by JNTUK, Kakinada (October 2015).</li>
+                            <li>Qualified in national GATE 2014 entrance exam.</li>
+                            <li>Qualified in APRCET 2018 conducted by AP State Govt for Doctoral programs.</li>
+                        </ul>
+                    </div>
 
-                <!-- VIEW 2: INDUSTRY & DEVELOPER LAYOUT CONTENT -->
-                <div class="industry-element">
-                    <section class="section-block">
-                        <h2>🛠️ Specialized AI &amp; Cloud Credentials</h2>
-                        <div class="grid-layout">
-                            <div class="credential-card">
-                                <h5>IBM Full Stack JavaScript Developer</h5>
-                                <p class="meta">September 2026 (12-Course Series)</p>
-                                <p>React, Node.js, Express, Microservices, Serverless, Containers Docker &amp; Kubernetes.</p>
-                            </div>
-                            <div class="credential-card">
-                                <h5>Microsoft AI &amp; ML Engineering</h5>
-                                <p class="meta">July 2026 (5-Course Series)</p>
-                                <p>Azure AI, Foundations of ML, Intelligent Troubleshooting Agents, Advanced ML Techniques.</p>
-                            </div>
-                            <div class="credential-card">
-                                <h5>Google Cybersecurity Professional</h5>
-                                <p class="meta">July 2026 (9-Course Series)</p>
-                                <p>Linux, Network Security Tools, Automation via Python, SQL, Incident Response logs.</p>
-                            </div>
-                        </div>
-                    </section>
+                    <div class="card">
+                        <h3>🏫 Core Board Registrations</h3>
+                        <p><strong>JNTUH Registration ID:</strong> 3059-191113-150648</p>
+                        <p><strong>UNIPUNE ID:</strong> 52092500466</p>
+                    </div>
 
+                    <div class="card">
+                        <h3>🗣️ Languages Fluency</h3>
+                        <p class="meta">English, Telugu, Hindi, Punjabi Gurmukhi (Read &amp; Write)</p>
+                    </div>
+                </aside>
+
+                <!-- Main Focus Column for Research, Teaching, and Publications -->
+                <div class="main-content">
                     <section class="section-block">
-                        <h2>💻 AI-Driven Web &amp; Systems Architecture</h2>
-                        <div class="card">
-                            <h5>Core Applied Competencies</h5>
+                        <h2>📖 Intellectual Property &amp; Scholarly Publications</h2>
+                        
+                        <div class="subsection">
+                            <h4>📘 Published Textbooks &amp; Chapters</h4>
                             <ul>
-                                <li>Building Generative AI-powered Applications with Python and Flask.</li>
-                                <li>Cloud Native DevOps workflows, Agile methods, and NoSQL management.</li>
-                                <li>Data Science applications applied to power industries using advanced vector models.</li>
+                                <li><strong>Book Title:</strong> <em>Logical Introduction to Digital Electronics / Digital Introduction to Microprocessors</em> (Published by BPB Publishers).</li>
+                                <li><strong>Book Chapter:</strong> "Cyber security in smart Grids: Role of Digital Advanced Devices", published in <em>Cyber security-Issues, Challenges –Solutions-Business</em>, IGI Global Publications (2022).</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>💡 Published Patents (Indian Patent Office)</h4>
+                            <ul>
+                                <li><strong>Patent 1:</strong> Smart Medical Diagnosis System using IoT driven Machine Learning and Big Data Analytics in Bio-medical Engineering (Pub No: 11/2024(INA)).</li>
+                                <li><strong>Patent 2:</strong> Power Quality Analysis Using IoT (App No: 202441060301, August 2024).</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>📄 Peer-Reviewed Research Papers</h4>
+                            <ul class="bullet-list">
+                                <li>"Fuzzy based Unified Control and Power Management Scheme for PV Battery based Hybrid Micro Grids for both Grid Connected and Islanded Modes" — <em>IJAEMA</em>, 2022.</li>
+                                <li>"Dynamic stability Enhancement of a Smart Grid Using Artificial Neural Network Based STATCOM" — <em>International Journal of Science and Technology (INDJST)</em>, 2016.</li>
+                                <li>"Transient stability improvement of Single machine infinite bus system using Distributed power flow controller" — <em>IJPAM</em>, 2017.</li>
                             </ul>
                         </div>
                     </section>
-                </div>
 
-                <!-- UNIVERSAL ENGAGEMENT FOOTER -->
-                <section class="section-block common-section">
-                    <h2>✉️ Contact &amp; Connect</h2>
-                    <form id="contactForm" class="contact-form">
+                    <section class="section-block">
+                        <h2>💼 Academic Instructional Experience (13+ Years)</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>Assistant Professor (EE - Deputed to AIML)</strong>
+                                <p class="meta">Sandip Foundation's SITRC, Nashik, Maharashtra (2025 – 2026)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Assistant Professor (EEE Department)</strong>
+                                <p class="meta">Guru Nanak Institute of Technology (A), Hyderabad (2023 – 2025)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Assistant Professor (EEE Department)</strong>
+                                <p class="meta">Malla Reddy Engineering College for Women (A), Secunderabad (2022 – 2023)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Sr. Assistant Professor (EEE Department)</strong>
+                                <p class="meta">Aditya College of Engineering, Surampalem (2019 – 2021)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Assistant Professor (EEE Department)</strong>
+                                <p class="meta">Vignan's Institute of Information Technology (A), Visakhapatnam (2015 – 2019)</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section-block">
+                        <h2>📋 Professional Profiles &amp; References</h2>
+                        <div class="grid-layout">
+                            <div class="mini-card">
+                                <h5>Research Profiles</h5>
+                                <p>• <a href="https://google.com" target="_blank">Google Scholar</a></p>
+                                <p>• Scopus ID: 58316331900</p>
+                                <p>• ORCID ID: 0000-0002-7895-407X</p>
+                            </div>
+                            <div class="mini-card">
+                                <h5>Academic Mentorship</h5>
+                                <p>• B.Tech Projects Guided: 08</p>
