@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G V Chiranjeevi Adari | Portfolio</title>
+    <title>G V Chiranjeevi Adari | Portfolio Folders</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,6 @@
     <!-- Header Section -->
     <header class="header">
         <div class="container header-content">
-            <!-- Replace 'profile.jpg' with your actual image path -->
             <img src="profile.jpg" alt="G V Chiranjeevi Adari" class="profile-img">
             <div class="header-text">
                 <h1>G V Chiranjeevi Adari</h1>
@@ -26,125 +25,157 @@
         </div>
     </header>
 
-    <!-- Navigation Tabs -->
-    <nav class="tab-navigation">
-        <div class="container btn-group">
-            <button class="tab-btn active" onclick="openTab(event, 'industry')">💻 Industry & Tech</button>
-            <button class="tab-btn" onclick="openTab(event, 'academic')">🏛️ Academia & Research</button>
-            <button class="tab-btn" onclick="openTab(event, 'education')">🎓 Education & Info</button>
+    <!-- Folder Container -->
+    <main class="container folder-container">
+        <h2 class="main-title">💼 Professional & Academic Dossier</h2>
+        <p class="instruction">Click on any folder below to expand and view the credentials.</p>
+
+        <!-- FOLDER 1: QUALIFICATIONS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Academic Qualifications</span>
+            </button>
+            <div class="folder-content">
+                <table class="info-table">
+                    <tr>
+                        <th>Degree / Course</th>
+                        <th>Institution</th>
+                        <th>Year / Score</th>
+                    </tr>
+                    <tr>
+                        <td><strong>M.Tech (High Voltage Engineering)</strong></td>
+                        <td>JNTU, Kakinada</td>
+                        <td>2012 / 72% (Distinction)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B.Tech (Electrical & Electronics Engineering)</strong></td>
+                        <td>Chaitanya Engg. College, Visakhapatnam</td>
+                        <td>2007 / 71.63% (Distinction)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intermediate (MPC)</strong></td>
+                        <td>Gayatri Junior College, Vizianagaram</td>
+                        <td>2003 / First Class</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secondary School Certificate</strong></td>
+                        <td>ZP High School, Jami, Vizianagaram</td>
+                        <td>2001 / First Class</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="container content-area">
-
-        <!-- TAB 1: INDUSTRY & TECH -->
-        <section id="industry" class="tab-content active-content">
-            <h2>Technical Certifications & Skills</h2>
-            <p class="sub-info">Extensive full-stack software development and artificial intelligence expertise validated by specialized certifications.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>IBM Full Stack JavaScript Developer</h3>
-                    <p class="date">September 2026</p>
-                    <p>12-course series covering React, Node.js, Express, Docker, Kubernetes, and Cloud Native development.</p>
-                    <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                </div>
-                <div class="card">
-                    <h3>Microsoft AI & ML Engineering</h3>
-                    <p class="date">July 2026</p>
-                    <p>5-course series specializing in ML algorithms, intelligent troubleshooting agents, and Azure cloud integration.</p>
-                    <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                </div>
-                <div class="card">
-                    <h3>IBM AI Developer & Java Specializations</h3>
-                    <p class="date">June - July 2026</p>
-                    <p>Comprehensive knowledge in Generative AI engineering, Python Flask ecosystems, and Java Spring frameworks.</p>
-                </div>
-            </div>
-
-            <h3 class="section-subtitle">Programming Toolkit</h3>
-            <div class="skills-tags">
-                <span>Advanced Python</span>
-                <span>JavaScript</span>
-                <span>Java (Basics)</span>
-                <span>Matlab Programming</span>
-                <span>Web Development</span>
-                <span>AI / GenAI Development</span>
-                <span>Cybersecurity</span>
-            </div>
-        </section>
-
-        <!-- TAB 2: ACADEMIA & RESEARCH -->
-        <section id="academic" class="tab-content">
-            <h2>Academic Track Record</h2>
-            <p class="sub-info">Over 9 years of higher education experience teaching core electrical systems, AI application design, and logic architectures.</p>
-
-            <h3>Key Publications & Patents</h3>
-            <ul class="list-items">
-                <li><strong>Book Chapter (2022):</strong> <em>Cyber security in smart Grids: Role of Digital Advanced Devices</em> - IGI Global (DOI: 10.4018/978-1-6684-5827-3.ch002).</li>
-                <li><strong>Patent (2024):</strong> Smart Medical Diagnosis system using IoT driven Machine Learning and Big Data Analytics.</li>
-                <li><strong>Patent (2024):</strong> Power Quality Analysis Using IoT (Application: 202441060301).</li>
-                <li><strong>Journal Paper (2022):</strong> Fuzzy based Unified Control and Power Management Scheme for PV Battery Hybrid Micro Grids.</li>
-            </ul>
-
-            <h3>Teaching Experience</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>Assistant Professor (EE - AIML)</h4>
-                    <p class="location">Sandip Institute of Technology and Research Centre, Nashik</p>
-                    <p class="date">2025 - 2026</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Assistant Professor (EEE)</h4>
-                    <p class="location">Guru Nanak Institute of Technology, Hyderabad</p>
-                    <p class="date">2023 - 2025</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Assistant Professor (EEE Department)</h4>
-                    <p class="location">Vignan's Institute of Information Technology, Visakhapatnam</p>
-                    <p class="date">2015 - 2019</p>
+        <!-- FOLDER 2: EXPERIENCE -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Professional Experience</span>
+            </button>
+            <div class="folder-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EE (AIML)</h4>
+                        <p class="location">Sandip Institute of Technology and Research Centre, Nashik</p>
+                        <p class="date">27-06-2025 to 31-05-2026</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EEE Department</h4>
+                        <p class="location">Guru Nanak Institute of Technology, Ibrahimpatnam, Hyderabad</p>
+                        <p class="date">16-02-2023 to 11-01-2025</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EEE Department</h4>
+                        <p class="location">Malla Reddy Engineering College for Women, Secunderabad</p>
+                        <p class="date">18-07-2022 to 15-2-2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Sr. Assistant Professor, EEE Department</h4>
+                        <p class="location">Aditya College of Engineering, Surampalem</p>
+                        <p class="date">22-11-2019 to 26-7-2021</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EEE Department</h4>
+                        <p class="location">Vignan’s Institute of Information Technology, Visakhapatnam</p>
+                        <p class="date">13-3-2015 to 04-11-2019</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- TAB 3: EDUCATION & CREDENTIALS -->
-        <section id="education" class="tab-content">
-            <h2>Education & Professional Metadata</h2>
-            <table class="info-table">
-                <tr>
-                    <th>Degree / Course</th>
-                    <th>Institution</th>
-                    <th>Year / Score</th>
-                </tr>
-                <tr>
-                    <td><strong>M.Tech (High Voltage Engineering)</strong></td>
-                    <td>JNTU, Kakinada</td>
-                    <td>2012 / 72% (Distinction)</td>
-                </tr>
-                <tr>
-                    <td><strong>B.Tech (Electrical & Electronics)</strong></td>
-                    <td>Chaitanya Engg. College, Visakhapatnam</td>
-                    <td>2007 / 71.63% (Distinction)</td>
-                </tr>
-            </table>
-
-            <h3 class="section-subtitle">Professional Memberships</h3>
-            <div class="skills-tags variations">
-                <span>IEEE Member (100444351)</span>
-                <span>IAENG Member (155951)</span>
-                <span>ORCID: 0000-0002-7895-407X</span>
-                <span>Scopus Author ID: 58316331900</span>
+        <!-- FOLDER 3: COURSERA CREDENTIALS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Coursera Professional Certifications</span>
+            </button>
+            <div class="folder-content">
+                <div class="grid">
+                    <div class="card">
+                        <h3>IBM Full Stack JavaScript Developer</h3>
+                        <p class="date">September 2026</p>
+                        <p>12-course series covering React, Node.js, Express, Docker, Kubernetes, and Cloud Native development.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>Microsoft AI and ML Engineering</h3>
+                        <p class="date">July 2026</p>
+                        <p>5-course series focusing on foundational algorithms, Azure engineering, and intelligent troubleshooting agents.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>IBM AI Developer</h3>
+                        <p class="date">June 2026</p>
+                        <p>10-course series featuring Generative AI development, Python frameworks, Flask, and AI application engineering.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>IBM Java Developer</h3>
+                        <p class="date">July 2026</p>
+                        <p>14-course series containing OOP foundations, Spring Framework, database applications, and GenAI for Java environments.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>IBM JavaScript Backend Developer</h3>
+                        <p class="date">August 2026</p>
+                        <p>13-course sequence specifying application security, DevOps pipelines, NoSQL, and serverless Node architectures.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>Google Cybersecurity Professional</h3>
+                        <p class="date">July 2026</p>
+                        <p>9-course pipeline detailing network infrastructure security, Linux/SQL tooling, automation via Python, and incident remediation.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
 
-    </main>
+        <!-- FOLDER 4: NPTEL CREDENTIALS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">NPTEL Certifications</span>
+            </button>
+            <div class="folder-content">
+                <ul class="list-items">
+                    <li><strong>Advanced Computer Architecture</strong> (April 2026)</li>
+                    <li><strong>Advanced Computer Networks</strong> (April 2025)</li>
+                    <li><strong>Practical Cybersecurity for Practitioners</strong> (July - Oct 2024)</li>
+                    <li><strong>Cloud Computing</strong> (July - Oct 2024)</li>
+                    <li><strong>Big Data Computing</strong> (August - October 2023)</li>
+                    <li><strong>Ethics in Engineering Practice</strong> (October 2023)</li>
+                    <li><strong>Introduction to Smart Grid</strong> (July - Sep 2022)</li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2026 G V Chiranjeevi Adari. Built cleanly with HTML, CSS, and JS.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- FOLDER 5: PUBLICATIONS & PATENTS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Publications & Patents</span>
+            </button>
+            <div class="folder-content">
+                <ul class="list-items">
