@@ -4,178 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G V Chiranjeevi Adari | Portfolio Folders</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --folder-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info a {
+            margin: 0 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Folder Accordion Styles */
+        .folder {
+            background: var(--folder-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .folder-header {
+            padding: 1rem;
+            background: #f1f5f9;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            user-select: none;
+        }
+
+        .folder-header::before {
+            content: "📁";
+            margin-right: 10px;
+        }
+
+        .folder.active .folder-header::before {
+            content: "📂";
+        }
+
+        .folder-content {
+            display: none;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .folder.active .folder-content {
+            display: block;
+        }
+
+        /* Certification Grid & Badge Styles */
+        .cert-card {
+            border-left: 4px solid var(--primary-color);
+            background: #fafafa;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .cert-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .verify-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #059669;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+
+        .verify-btn:hover {
+            background-color: #047857;
+        }
+
+        .verify-btn::before {
+            content: "✓";
+            margin-right: 6px;
+            font-weight: bold;
+        }
+
+        /* Verification Modal Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 700px;
+            height: 80vh;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 1rem;
+            background: #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            flex: 1;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container header-content">
-            <img src="profile.jpg" alt="G V Chiranjeevi Adari" class="profile-img">
-            <div class="header-text">
-                <h1>G V Chiranjeevi Adari</h1>
-                <h3>Electrical Engineer & Software Professional</h3>
-                <p class="objective">Forever a student, dreaming for a career in a nice environment which is technically and ethically developed.</p>
-                <div class="contact-links">
-                    <a href="mailto:chiranjeevi210@gmail.com">📧 chiranjeevi210@gmail.com</a>
-                    <a href="tel:+919949163002">📱 +91 9949163002</a>
-                    <a href="https://google.com" target="_blank">🎓 Google Scholar</a>
-                </div>
-            </div>
+    <header>
+        <h1>G V Chiranjeevi Adari</h1>
+        <h3>Electrical Engineer & Software Professional</h3>
+        <div class="contact-info">
+            <a href="mailto:chiranjeevi210@gmail.com">📧 Email</a>
+            <a href="tel:+919949163002">📱 Phone</a>
+            <a href="#">🎓 Google Scholar</a>
         </div>
     </header>
 
-    <!-- Folder Container -->
-    <main class="container folder-container">
-        <h2 class="main-title">💼 Professional & Academic Dossier</h2>
-        <p class="instruction">Click on any folder below to expand and view the credentials.</p>
+    <!-- Folder 1: Academic -->
+    <div class="folder">
+        <div class="folder-header">Academic Qualifications</div>
+        <div class="folder-content">
+            <!-- Your existing table goes here -->
+            <p><strong>M.Tech:</strong> JNTU, Kakinada (2012)</p>
+            <p><strong>B.Tech:</strong> Chaitanya Engg. College (2007)</p>
+        </div>
+    </div>
 
-        <!-- FOLDER 1: QUALIFICATIONS -->
-        <div class="folder">
-            <button class="folder-header" onclick="toggleFolder(this)">
-                <span class="folder-icon">📁</span>
-                <span class="folder-title">Academic Qualifications</span>
-            </button>
-            <div class="folder-content">
-                <table class="info-table">
-                    <tr>
-                        <th>Degree / Course</th>
-                        <th>Institution</th>
-                        <th>Year / Score</th>
-                    </tr>
-                    <tr>
-                        <td><strong>M.Tech (High Voltage Engineering)</strong></td>
-                        <td>JNTU, Kakinada</td>
-                        <td>2012 / 72% (Distinction)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>B.Tech (Electrical & Electronics Engineering)</strong></td>
-                        <td>Chaitanya Engg. College, Visakhapatnam</td>
-                        <td>2007 / 71.63% (Distinction)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Intermediate (MPC)</strong></td>
-                        <td>Gayatri Junior College, Vizianagaram</td>
-                        <td>2003 / First Class</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Secondary School Certificate</strong></td>
-                        <td>ZP High School, Jami, Vizianagaram</td>
-                        <td>2001 / First Class</td>
-                    </tr>
-                </table>
+    <!-- Folder 2: Coursera Certifications -->
+    <div class="folder">
+        <div class="folder-header">Coursera Professional Certifications</div>
+        <div class="folder-content">
+            
+            <div class="cert-card">
+                <h3>IBM Full Stack JavaScript Developer</h3>
+                <p><small>September 2026</small></p>
+                <!-- REPLACE # WITH YOUR ACTUAL COURSERA VERIFICATION LINK -->
+                <button class="verify-btn" onclick="openVerification('https://coursera.org')">Verify Credential</button>
+            </div>
+
+            <div class="cert-card">
+                <h3>Microsoft AI and ML Engineering</h3>
+                <p><small>July 2026</small></p>
+                <button class="verify-btn" onclick="openVerification('https://coursera.org')">Verify Credential</button>
+            </div>
+
+            <div class="cert-card">
+                <h3>IBM AI Developer</h3>
+                <p><small>June 2026</small></p>
+                <button class="verify-btn" onclick="openVerification('https://coursera.org')">Verify Credential</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Folder 3: NPTEL Certifications -->
+    <div class="folder">
+        <div class="folder-header">NPTEL Certifications</div>
+        <div class="folder-content">
+            <ul>
+                <li>
+                    Advanced Computer Architecture (April 2026) 
+                    <button class="verify-btn" onclick="openVerification('YOUR_NPTEL_CERT_URL')">Verify</button>
+                </li>
+                <li style="margin-top: 10px;">
+                    Advanced Computer Networks (April 2025)
+                    <button class="verify-btn" onclick="openVerification('YOUR_NPTEL_CERT_URL')">Verify</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Interactive Credential Modal -->
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modalTitle" style="font-weight: bold;">Credential Verification</span>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="certFrame" src=""></iframe>
             </div>
         </div>
+    </div>
 
-        <!-- FOLDER 2: EXPERIENCE -->
-        <div class="folder">
-            <button class="folder-header" onclick="toggleFolder(this)">
-                <span class="folder-icon">📁</span>
-                <span class="folder-title">Professional Experience</span>
-            </button>
-            <div class="folder-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4>Assistant Professor, EE (AIML)</h4>
-                        <p class="location">Sandip Institute of Technology and Research Centre, Nashik</p>
-                        <p class="date">27-06-2025 to 31-05-2026</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Assistant Professor, EEE Department</h4>
-                        <p class="location">Guru Nanak Institute of Technology, Ibrahimpatnam, Hyderabad</p>
-                        <p class="date">16-02-2023 to 11-01-2025</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Assistant Professor, EEE Department</h4>
-                        <p class="location">Malla Reddy Engineering College for Women, Secunderabad</p>
-                        <p class="date">18-07-2022 to 15-2-2023</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Sr. Assistant Professor, EEE Department</h4>
-                        <p class="location">Aditya College of Engineering, Surampalem</p>
-                        <p class="date">22-11-2019 to 26-7-2021</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Assistant Professor, EEE Department</h4>
-                        <p class="location">Vignan’s Institute of Information Technology, Visakhapatnam</p>
-                        <p class="date">13-3-2015 to 04-11-2019</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <script>
+        // Folder Toggle Logic
+        document.querySelectorAll('.folder-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
 
-        <!-- FOLDER 3: COURSERA CREDENTIALS -->
-        <div class="folder">
-            <button class="folder-header" onclick="toggleFolder(this)">
-                <span class="folder-icon">📁</span>
-                <span class="folder-title">Coursera Professional Certifications</span>
-            </button>
-            <div class="folder-content">
-                <div class="grid">
-                    <div class="card">
-                        <h3>IBM Full Stack JavaScript Developer</h3>
-                        <p class="date">September 2026</p>
-                        <p>12-course series covering React, Node.js, Express, Docker, Kubernetes, and Cloud Native development.</p>
-                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                    </div>
-                    <div class="card">
-                        <h3>Microsoft AI and ML Engineering</h3>
-                        <p class="date">July 2026</p>
-                        <p>5-course series focusing on foundational algorithms, Azure engineering, and intelligent troubleshooting agents.</p>
-                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                    </div>
-                    <div class="card">
-                        <h3>IBM AI Developer</h3>
-                        <p class="date">June 2026</p>
-                        <p>10-course series featuring Generative AI development, Python frameworks, Flask, and AI application engineering.</p>
-                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                    </div>
-                    <div class="card">
-                        <h3>IBM Java Developer</h3>
-                        <p class="date">July 2026</p>
-                        <p>14-course series containing OOP foundations, Spring Framework, database applications, and GenAI for Java environments.</p>
-                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                    </div>
-                    <div class="card">
-                        <h3>IBM JavaScript Backend Developer</h3>
-                        <p class="date">August 2026</p>
-                        <p>13-course sequence specifying application security, DevOps pipelines, NoSQL, and serverless Node architectures.</p>
-                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                    </div>
-                    <div class="card">
-                        <h3>Google Cybersecurity Professional</h3>
-                        <p class="date">July 2026</p>
-                        <p>9-course pipeline detailing network infrastructure security, Linux/SQL tooling, automation via Python, and incident remediation.</p>
-                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        // Verification Modal Logic
+        function openVerification(url) {
+            // Some platforms restrict iframes (X-Frame-Options). 
+            // If they block embedding, we gracefully fall back to opening a secure new tab.
+            if(url.includes('coursera.org') || url.includes('nptel')) {
+                window.open(url, '_blank', 'noopener,noreferrer');
+            } else {
+                // For direct images/PDFs or frame-friendly links, open inside the page
+                document.getElementById('certFrame').src = url;
+                document.getElementById('certModal').style.display = 'flex';
+            }
+        }
 
-        <!-- FOLDER 4: NPTEL CREDENTIALS -->
-        <div class="folder">
-            <button class="folder-header" onclick="toggleFolder(this)">
-                <span class="folder-icon">📁</span>
-                <span class="folder-title">NPTEL Certifications</span>
-            </button>
-            <div class="folder-content">
-                <ul class="list-items">
-                    <li><strong>Advanced Computer Architecture</strong> (April 2026)</li>
-                    <li><strong>Advanced Computer Networks</strong> (April 2025)</li>
-                    <li><strong>Practical Cybersecurity for Practitioners</strong> (July - Oct 2024)</li>
-                    <li><strong>Cloud Computing</strong> (July - Oct 2024)</li>
-                    <li><strong>Big Data Computing</strong> (August - October 2023)</li>
-                    <li><strong>Ethics in Engineering Practice</strong> (October 2023)</li>
-                    <li><strong>Introduction to Smart Grid</strong> (July - Sep 2022)</li>
-                </ul>
-            </div>
-        </div>
+        function closeModal() {
+            document.getElementById('certModal').style.display = 'none';
+            document.getElementById('certFrame').src = '';
+        }
 
-        <!-- FOLDER 5: PUBLICATIONS & PATENTS -->
-        <div class="folder">
-            <button class="folder-header" onclick="toggleFolder(this)">
-                <span class="folder-icon">📁</span>
-                <span class="folder-title">Publications & Patents</span>
-            </button>
-            <div class="folder-content">
-                <ul class="list-items">
+        // Close modal clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('certModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
