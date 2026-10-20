@@ -1,17 +1,250 @@
+javascript
+function openTab(evt, tabId) {
+    // Hide all tab contents
+    const tabContents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active-content");
+    }
+
+    // Remove active status from all navigation buttons
+    const tabButtons = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+    }
+
+    // Show the targeted content area and append active styles to the pressed button
+    document.getElementById(tabId).classList.add("active-content");
+    evt.currentTarget.classList.add("active");
+}
+Use code with caution.
+
+Steps to Run This Locally
+
+1. Put all three files (index.html, style.css, script.js) together inside one project folder.
+2. Put a professional photo of yourself inside that same folder and rename it to profile.jpg.
+3. Double-click index.html to see your dual academic-industry interactive resume run inside your web browser.
+Would you like help writing out the remaining entries for your NPTEL certs, FDP courses, or adding a script to auto-calculate your years of experience? Let me know which section you want to expand next.
+
+i want to dispaly my certifications as in folders like all NPTEL credentials in one folder, all Coursera credentials in one folder. all experience in one folder, all qualifications in another folder. so on
+
+To organize your credentials into clean, interactive "folders," we can update your website to use a Collapsible Folder (Accordion) layout. This lets recruiters or universities click a folder to expand and see its contents, keeping your page exceptionally organized.
+Here is the updated code replacing the original configuration.
+
+1. Updated Structure (index.html)
+
+Replace your index.html file with this structure, which groups your CV details logically into collapsible components:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G V Chiranjeevi Adari | Portfolio Folders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-content">
+            <img src="profile.jpg" alt="G V Chiranjeevi Adari" class="profile-img">
+            <div class="header-text">
+                <h1>G V Chiranjeevi Adari</h1>
+                <h3>Electrical Engineer & Software Professional</h3>
+                <p class="objective">Forever a student, dreaming for a career in a nice environment which is technically and ethically developed.</p>
+                <div class="contact-links">
+                    <a href="mailto:chiranjeevi210@gmail.com">📧 chiranjeevi210@gmail.com</a>
+                    <a href="tel:+919949163002">📱 +91 9949163002</a>
+                    <a href="https://google.com" target="_blank">🎓 Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Folder Container -->
+    <main class="container folder-container">
+        <h2 class="main-title">💼 Professional & Academic Dossier</h2>
+        <p class="instruction">Click on any folder below to expand and view the credentials.</p>
+
+        <!-- FOLDER 1: QUALIFICATIONS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Academic Qualifications</span>
+            </button>
+            <div class="folder-content">
+                <table class="info-table">
+                    <tr>
+                        <th>Degree / Course</th>
+                        <th>Institution</th>
+                        <th>Year / Score</th>
+                    </tr>
+                    <tr>
+                        <td><strong>M.Tech (High Voltage Engineering)</strong></td>
+                        <td>JNTU, Kakinada</td>
+                        <td>2012 / 72% (Distinction)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B.Tech (Electrical & Electronics Engineering)</strong></td>
+                        <td>Chaitanya Engg. College, Visakhapatnam</td>
+                        <td>2007 / 71.63% (Distinction)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intermediate (MPC)</strong></td>
+                        <td>Gayatri Junior College, Vizianagaram</td>
+                        <td>2003 / First Class</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secondary School Certificate</strong></td>
+                        <td>ZP High School, Jami, Vizianagaram</td>
+                        <td>2001 / First Class</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- FOLDER 2: EXPERIENCE -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Professional Experience</span>
+            </button>
+            <div class="folder-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EE (AIML)</h4>
+                        <p class="location">Sandip Institute of Technology and Research Centre, Nashik</p>
+                        <p class="date">27-06-2025 to 31-05-2026</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EEE Department</h4>
+                        <p class="location">Guru Nanak Institute of Technology, Ibrahimpatnam, Hyderabad</p>
+                        <p class="date">16-02-2023 to 11-01-2025</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EEE Department</h4>
+                        <p class="location">Malla Reddy Engineering College for Women, Secunderabad</p>
+                        <p class="date">18-07-2022 to 15-2-2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Sr. Assistant Professor, EEE Department</h4>
+                        <p class="location">Aditya College of Engineering, Surampalem</p>
+                        <p class="date">22-11-2019 to 26-7-2021</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Assistant Professor, EEE Department</h4>
+                        <p class="location">Vignan’s Institute of Information Technology, Visakhapatnam</p>
+                        <p class="date">13-3-2015 to 04-11-2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOLDER 3: COURSERA CREDENTIALS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Coursera Professional Certifications</span>
+            </button>
+            <div class="folder-content">
+                <div class="grid">
+                    <div class="card">
+                        <h3>IBM Full Stack JavaScript Developer</h3>
+                        <p class="date">September 2026</p>
+                        <p>12-course series covering React, Node.js, Express, Docker, Kubernetes, and Cloud Native development.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>Microsoft AI and ML Engineering</h3>
+                        <p class="date">July 2026</p>
+                        <p>5-course series focusing on foundational algorithms, Azure engineering, and intelligent troubleshooting agents.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>IBM AI Developer</h3>
+                        <p class="date">June 2026</p>
+                        <p>10-course series featuring Generative AI development, Python frameworks, Flask, and AI application engineering.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>IBM Java Developer</h3>
+                        <p class="date">July 2026</p>
+                        <p>14-course series containing OOP foundations, Spring Framework, database applications, and GenAI for Java environments.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>IBM JavaScript Backend Developer</h3>
+                        <p class="date">August 2026</p>
+                        <p>13-course sequence specifying application security, DevOps pipelines, NoSQL, and serverless Node architectures.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                    <div class="card">
+                        <h3>Google Cybersecurity Professional</h3>
+                        <p class="date">July 2026</p>
+                        <p>9-course pipeline detailing network infrastructure security, Linux/SQL tooling, automation via Python, and incident remediation.</p>
+                        <a href="https://coursera.org" target="_blank" class="verify-link">Verify Credentials →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOLDER 4: NPTEL CREDENTIALS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">NPTEL Certifications</span>
+            </button>
+            <div class="folder-content">
+                <ul class="list-items">
+                    <li><strong>Advanced Computer Architecture</strong> (April 2026)</li>
+                    <li><strong>Advanced Computer Networks</strong> (April 2025)</li>
+                    <li><strong>Practical Cybersecurity for Practitioners</strong> (July - Oct 2024)</li>
+                    <li><strong>Cloud Computing</strong> (July - Oct 2024)</li>
+                    <li><strong>Big Data Computing</strong> (August - October 2023)</li>
+                    <li><strong>Ethics in Engineering Practice</strong> (October 2023)</li>
+                    <li><strong>Introduction to Smart Grid</strong> (July - Sep 2022)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FOLDER 5: PUBLICATIONS & PATENTS -->
+        <div class="folder">
+            <button class="folder-header" onclick="toggleFolder(this)">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">Publications & Patents</span>
+            </button>
+            <div class="folder-content">
+                <ul class="list-items">
+Use code with caution.
+Book Chapter (2022): Cyber security in smart Grids:-Role of Digital Advanced Devices, IGI Global Publications. DOI: 10.4018/978-1-6684-5827-3.ch002
+Patent (2024): Smart Medical Diagnosis system using IOT driven Machine Learning and Big Data Analytics (Bio-medical Engineering).
+Patent (2024): Power Quality Analysis Using IOT (Application Number: 202441060301).
+Journal Paper (2022): Fuzzy based Unified Control and Power Management Scheme for PV Battery based Hybrid Micro Grids, IJAEMA.
+
+
+© 2026 G V Chiranjeevi Adari. Managed cleanly via asset folders.
+
+---
+
+### 2. Folder Specific Styling (`style.css`)
+Update your `style.css` to add the folder appearance, hover animation transformations, and smooth content visibility control:
+
+```css
 :root {
-    --primary: #1e293b;
+    --primary: #0f172a;
     --accent: #2563eb;
     --text-main: #334155;
-    --bg-light: #f8fafc;
+    --bg-light: #f1f5f9;
     --white: #ffffff;
-    --border: #e2e8f0;
+    --border: #cbd5e1;
+    --folder-bg: #e2e8f0;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
@@ -21,250 +254,130 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
+/* Header Area */
 .header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: var(--white);
-    padding: 50px 0;
+    padding: 40px 0;
+    margin-bottom: 30px;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 .profile-img {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
+    border: 3px solid var(--accent);
     object-fit: cover;
-    border: 4px solid var(--accent);
 }
 
-.header-text h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-}
-
-.header-text h3 {
-    color: #93c5fd;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.objective {
-    font-style: italic;
-    font-size: 0.95rem;
-    opacity: 0.85;
-    margin-bottom: 15px;
-}
+.header-text h1 { font-size: 2rem; }
+.header-text h3 { color: #38bdf8; font-weight: 400; margin-bottom: 5px; }
+.objective { font-style: italic; opacity: 0.8; font-size: 0.9rem; margin-bottom: 12px; }
 
 .contact-links a {
     color: var(--white);
     text-decoration: none;
-    margin-right: 15px;
-    font-size: 0.9rem;
+    margin-right: 12px;
+    font-size: 0.85rem;
     background: rgba(255,255,255,0.1);
-    padding: 5px 12px;
-    border-radius: 20px;
-    transition: 0.3s;
+    padding: 4px 10px;
+    border-radius: 15px;
 }
 
-.contact-links a:hover {
-    background: var(--accent);
-}
+/* Folder System UX */
+.main-title { color: var(--primary); margin-bottom: 4px; }
+.instruction { color: #64748b; font-size: 0.9rem; margin-bottom: 25px; }
 
-/* Tab Navigation */
-.tab-navigation {
+.folder {
     background: var(--white);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
 }
 
-.btn-group {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.tab-btn {
-    background: none;
+.folder-header {
+    width: 100%;
+    background: var(--folder-bg);
     border: none;
-    padding: 15px 25px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-main);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     cursor: pointer;
-    border-bottom: 3px solid transparent;
+    text-align: left;
+    transition: background 0.2s ease;
 }
 
-.tab-btn:hover {
-    color: var(--accent);
+.folder-header:hover {
+    background: #cbd5e1;
 }
 
-.tab-btn.active {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+.folder-icon {
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
 }
 
-/* Content & Layout Architecture */
-.content-area {
-    padding: 40px 20px;
+.folder-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
 }
 
-.tab-content {
+/* Click Trigger adjustments */
+.folder.open .folder-icon {
+    transform: rotate(90deg); /* Subtle spin animation on open */
+}
+
+.folder-content {
     display: none;
+    padding: 25px 20px;
+    border-top: 1px solid var(--border);
+    background: #ffffff;
 }
 
-.tab-content.active-content {
+.folder.open .folder-content {
     display: block;
 }
 
-h2 {
-    margin-bottom: 10px;
-    color: var(--primary);
-}
-
-.sub-info {
-    margin-bottom: 30px;
-    color: #64748b;
-}
-
+/* Content Element Formatting Styles */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 .card {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: var(--primary);
-}
-
-.date {
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.verify-link {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 0.85rem;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Tags & Lists */
-.section-subtitle {
-    margin: 30px 0 15px 0;
-}
-
-.skills-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skills-tags span {
-    background: #e0f2fe;
-    color: #0369a1;
-    padding: 6px 14px;
+    padding: 15px;
     border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    background: #fafafa;
 }
 
-.list-items li {
-    margin-bottom: 15px;
-    list-style-type: square;
-    margin-left: 20px;
-}
+.card h3 { font-size: 1rem; color: var(--primary); margin-bottom: 5px; }
+.date { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+.verify-link { display: inline-block; margin-top: 10px; font-size: 0.8rem; text-decoration: none; color: var(--accent); font-weight: bold; }
 
-/* Timeline */
-.timeline {
-    border-left: 2px solid var(--border);
-    padding-left: 20px;
-}
+.info-table { width: 100%; border-collapse: collapse; }
+.info-table th, .info-table td { padding: 10px; border: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
+.info-table th { background: #f8fafc; }
 
-.timeline-item {
-    margin-bottom: 25px;
-    position: relative;
-}
+.list-items li { margin-left: 20px; margin-bottom: 10px; font-size: 0.95rem; }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--accent);
-    border-radius: 50%;
-    left: -27px;
-    top: 6px;
-}
+.timeline { border-left: 2px solid var(--border); padding-left: 15px; }
+.timeline-item { margin-bottom: 20px; position: relative; }
+.timeline-item::before { content: ''; position: absolute; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; left: -21px; top: 6px; }
 
-/* Tables */
-.info-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--white);
-    margin-bottom: 30px;
-}
-
-.info-table th, .info-table td {
-    padding: 12px;
-    border: 1px solid var(--border);
-    text-align: left;
-}
-
-.info-table th {
-    background: #f1f5f9;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 30px;
-    background: #0f172a;
-    color: #94a3b8;
-    font-size: 0.85rem;
-    margin-top: 60px;
-}
-
-/* Responsive adjustment */
-@media(max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .btn-group {
-        flex-direction: column;
-    }
-    .tab-btn {
-        text-align: left;
-        border-bottom: none;
-        border-left: 3px solid transparent;
-    }
-    .tab-btn.active {
-        border-left-color: var(--accent);
-    }
-}
+.footer { text-align: center; padding: 25px; background: #0f172a; color: #94a3b8; font-size: 0.8rem; margin-top: 40px; }
