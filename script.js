@@ -11,32 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
         'ibm-js': {
             title: "IBM Full Stack JavaScript Developer (12-Course Series)",
             desc: "Comprehensive software specialization targeting React engineering, asynchronous JavaScript engines, Node.js infrastructure, Express.js microservice containers, NoSQL database engines, and serverless pipelines.",
-            url: "https://coursera.org"
+            url: "https://www.coursera.org/account/accomplishments/specialization/L2Q2VEP5W243"
         },
         'ms-ai': {
             title: "Microsoft AI and ML Engineering Professional Certificate (5 Courses)",
             desc: "Validation of architectural expertise in foundations of Machine Learning modeling, core algorithms, building intelligent production troubleshooting agents, and orchestrating analytical loads across Microsoft Azure pipelines.",
-            url: "https://coursera.org"
+            url: "https://www.coursera.org/account/accomplishments/specialization/certificate/5SGHZ101WA4W"
         },
         'ibm-ai': {
             title: "IBM AI Developer Professional Certification (10-Course Series)",
             desc: "Expertise validation focusing on Applied Systems Engineering, foundational Python architectures, Flask integration structures, and deploying Generative AI large language model pipelines safely.",
-            url: "https://coursera.org"
+            url: "https://coursera.org/verify/professional-cert/E06UAT9KFM8S"
         },
         'ibm-java': {
             title: "IBM Java Developer Certification (14-Course Series)",
             desc: "Deep focus on object-oriented software engineering principles, Java design patterns, automated unit testing matrices, Spring Boot application frameworks, and enterprise database mapping layers.",
-            url: "https://coursera.org"
+            url: "https://coursera.org/verify/professional-cert/CGMXJ0SN33A5"
         },
         'ibm-backend': {
             title: "IBM JavaScript Backend Developer Certification (13 Courses)",
             desc: "Asynchronous backend platform design utilizing Node.js & MongoDB ecosystems, container configurations via Docker, Kubernetes orchestrations, application layer tracking, observability frameworks, and robust software security.",
-            url: "https://coursera.org"
+            url: "https://www.coursera.org/account/accomplishments/specialization/certificate/R9G3UO4SYXJM"
         },
         'google-cyber': {
             title: "Google Cybersecurity Certification (9-Course Series)",
             desc: "System defense strategies targeting asset and network vulnerability mitigation, Linux configuration operations, automated system auditing with Python scripting, threat analysis, and security incident response matrix.",
-            url: "https://coursera.org"
+            url: "https://coursera.org/verify/professional-cert/SZEO3FT6Q193"
         },
         'nptel': {
             title: "NPTEL Advanced Academic Certifications",
