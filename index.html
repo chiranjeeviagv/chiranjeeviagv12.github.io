@@ -3,75 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G V Chiranjeevi Adari | Portfolio Folders</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <title>G V Chiranjeevi Adari - Interactive CV</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>G V Chiranjeevi Adari</h1>
-        <h3>Electrical Engineer & Software Professional</h3>
-        <div class="contact-info">
-            <a href="mailto:chiranjeevi210@gmail.com">📧 Email</a>
-            <a href="tel:+919949163002">📱 Phone</a>
-            <a href="https://google.com" target="_blank" rel="noopener">🎓 Google Scholar</a>
+    <header class="cv-header">
+        <div class="header-content">
+            <h1>G V Chiranjeevi Adari</h1>
+            <p class="subtitle">Electrical Engineer & Software Professional</p>
+            <div class="contact-info">
+                <span>📍 Visakhapatnam, Andhra Pradesh, India</span> | 
+                <span>📱 +91 9949163002</span> | 
+                <span>📧 chiranjeevi210@gmail.com</span>
+            </div>
+            <button id="themeToggle" class="btn">🌓 Toggle Theme</button>
         </div>
     </header>
 
-    <!-- Folder 1: Academic Qualifications -->
-    <div class="folder">
-        <div class="folder-header">Academic Qualifications</div>
-        <div class="folder-content">
-            <p><strong>M.Tech (High Voltage Engineering):</strong> JNTU, Kakinada (2012) | 72%</p>
-            <p><strong>B.Tech (Electrical & Electronics Engineering):</strong> Chaitanya Engg. College (2007) | 71.63%</p>
-        </div>
-    </div>
+    <main class="cv-container">
+        
+        <!-- Career Objective -->
+        <section class="cv-section">
+            <h2>Career Objective</h2>
+            <p>An Electrical Engineer and Software professional, forever a student, dreaming for a career in a nice environment which is technically and ethically developed.</p>
+        </section>
 
-    <!-- Folder 2: Coursera Certifications -->
-    <div class="folder">
-        <div class="folder-header">Coursera Professional Certifications</div>
-        <div class="folder-content">
-            <div class="cert-card">
-                <h3>IBM Full Stack JavaScript Developer</h3>
-                <p><small>September 2026</small></p>
-                <button class="verify-btn" data-url="https://coursera.org">Verify Credential</button>
+        <!-- Dynamic Academic & Professional Certifications Panel -->
+        <section class="cv-section">
+            <h2>Interactive Certifications Directory</h2>
+            <p class="instruction-text">Click any badge button below to dynamically load the credentials and verification hyperlink:</p>
+            
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="ibm-js">IBM Full Stack JS</button>
+                <button class="tab-btn" data-tab="ms-ai">Microsoft AI/ML</button>
+                <button class="tab-btn" data-tab="ibm-ai">IBM AI Dev</button>
+                <button class="tab-btn" data-tab="ibm-java">IBM Java Dev</button>
+                <button class="tab-btn" data-tab="ibm-backend">IBM Backend JS</button>
+                <button class="tab-btn" data-tab="google-cyber">Google Cybersecurity</button>
+                <button class="tab-btn" data-tab="nptel">NPTEL Credentials</button>
             </div>
-            <div class="cert-card">
-                <h3>Microsoft AI and ML Engineering</h3>
-                <p><small>July 2026</small></p>
-                <button class="verify-btn" data-url="https://coursera.org">Verify Credential</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Folder 3: NPTEL Certifications -->
-    <div class="folder">
-        <div class="folder-header">NPTEL Certifications</div>
-        <div class="folder-content">
-            <ul>
-                <li>
-                    Advanced Computer Architecture (April 2026) 
-                    <button class="verify-btn btn-small" data-url="YOUR_NPTEL_URL">Verify</button>
-                </li>
+            <div class="tab-display-box">
+                <!-- Content injected dynamically via JavaScript -->
+                <div id="tabContentPlaceholder"></div>
+            </div>
+        </section>
+
+        <!-- Coursework and Expertise Category Filtering -->
+        <section class="cv-section">
+            <h2>Handled Courses & Domain Filtering</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Specialties</button>
+                <button class="filter-btn" data-filter="ai-ml">AI & Computation</button>
+                <button class="filter-btn" data-filter="eee-core">Core Electrical Engineering</button>
+                <button class="filter-btn" data-filter="systems">Systems & Protection</button>
+            </div>
+            
+            <ul class="skills-list" id="coursesContainer">
+                <li data-cat="ai-ml">Artificial Intelligence Techniques</li>
+                <li data-cat="ai-ml">AI Based Web Design</li>
+                <li data-cat="ai-ml">Advanced Python Programming</li>
+                <li data-cat="ai-ml">Introduction to Expert Systems</li>
+                <li data-cat="ai-ml">Discrete Mathematics and Logic</li>
+                <li data-cat="eee-core">Electro Magnetic Fields</li>
+                <li data-cat="eee-core">Microprocessors and Microcontrollers</li>
+                <li data-cat="eee-core">Digital Logic Design</li>
+                <li data-cat="eee-core">Electrical Technology</li>
+                <li data-cat="eee-core">Basic Electrical and Electronics Engineering</li>
+                <li data-cat="systems">Non-Conventional Sources of Energy</li>
+                <li data-cat="systems">High Voltage Engineering</li>
+                <li data-cat="systems">Digital Controllers</li>
+                <li data-cat="systems">Control Systems</li>
+                <li data-cat="systems">Power System Protection</li>
+                <li data-cat="systems">Power System Analysis</li>
             </ul>
-        </div>
-    </div>
+        </section>
 
-    <!-- Embedded Verification Modal Window -->
-    <div id="certModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span id="modalTitle">Credential Verification</span>
-                <button class="modal-close" id="closeModalBtn">&times;</button>
+        <!-- Interactive Publications, Patents, and External Indexes -->
+        <section class="cv-section">
+            <h2>Embedded Literature & Intellectual Property</h2>
+            <p class="instruction-text">Click the action controls below to evaluate formal filings and access document databases:</p>
+            
+            <div class="action-row">
+                <button class="ref-btn text-left-btn" data-target="patentsPanel">📋 View Published Patents</button>
+                <button class="ref-btn text-left-btn" data-target="papersPanel">📝 View Published Research Papers</button>
+                <button class="ref-btn text-left-btn" data-target="indexesPanel">🔗 Academic Global Profiles</button>
             </div>
-            <div class="modal-body">
-                <iframe id="certFrame" src=""></iframe>
-            </div>
-        </div>
-    </div>
 
-    <!-- Link to external JS -->
+            <!-- Patent Target Box -->
+            <div id="patentsPanel" class="reference-box hidden">
+                <h3>Patents Registry (Indian Patent Office)</h3>
+                <ul>
+                    <li>
+                        <strong>Smart Medical Diagnosis System:</strong> Using IoT-driven Machine Learning and Big Data Analytics in the field of Bio-Medical Engineering. 
+                        <br><em>Publication No: 11/2024(INA)</em> — <a href="http://ipindia.nic.in" target="_blank" class="inline-link">Verify at IP India Portal 🔗</a>
+                    </li>
+                    <li>
+                        <strong>Power Quality Analysis Using IoT:</strong> 
+                        <br><em>Application No: 202441060301 (August 2024)</em> — <a href="http://ipindia.nic.in" target="_blank" class="inline-link">Verify at IP India Portal 🔗</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Papers Target Box -->
+            <div id="papersPanel" class="reference-box hidden">
+                <h3>Refereed Journal Records</h3>
+                <ul class="papers-list">
+                    <li>
+                        "Fuzzy based Unified Control and Power Management Scheme for PV Battery based Hybrid Micro Grids..." (IJAEMA, 2022) 
+                        — <a href="https://google.com" target="_blank" class="inline-link">Open Source Document Link 🔗</a>
+                    </li>
+                    <li>
+                        "Dynamic stability Enhancement of a Smart Grid Using Artificial Neural Network Based STATCOM" (INDJST, 2016) 
+                        — <a href="https://indjst.org" target="_blank" class="inline-link">Open Article Portal 🔗</a>
+                    </li>
+                    <li>
+                        "Transient stability improvement of Single machine infinite bus system using Distributed power flow controller" (IJPAM, 2017) 
+                        — <a href="https://acadpubl.eu" target="_blank" class="inline-link">View PDF Archive 🔗</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Indexes Target Box -->
+            <div id="indexesPanel" class="reference-box hidden">
+                <h3>Global Metadata Identifiers</h3>
+                <p>📊 <a href="https://google.com" target="_blank" class="inline-link">Google Scholar Metrics Portfolio</a></p>
+                <p>🆔 <strong>ORCID ID:</strong> <a href="https://orcid.org" target="_blank" class="inline-link">0000-0002-7895-407X</a> | <strong>Scopus Author ID:</strong> 58316331900</p>
+            </div>
+        </section>
+
+        <!-- Professional Endorsements Section -->
+        <section class="cv-section">
+            <h2>References on Request</h2>
+            <div class="ref-grid">
+                <div>
+                    <button class="ref-btn block-btn" data-target="refPerson1">👤 Dr. Dipak D Bhage</button>
+                    <div id="refPerson1" class="reference-box hidden">
+                        <p><strong>Designation:</strong> Professor, PCU, Pune</p>
+                        <p><strong>📞 Telephone Link:</strong> <a href="tel:7083780216" class="inline-link">70837 80216</a></p>
+                    </div>
+                </div>
+                <div>
+                    <button class="ref-btn block-btn" data-target="refPerson2">👤 Mrs. Sangita K Chowdary</button>
+                    <div id="refPerson2" class="reference-box hidden">
+                        <p><strong>Designation:</strong> Professor, SITRC</p>
+                        <p><strong>📞 Telephone Link:</strong> <a href="tel:9730199702" class="inline-link">9730199702</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
