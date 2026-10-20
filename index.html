@@ -4,163 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G V Chiranjeevi Adari | Portfolio Folders</title>
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --folder-bg: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .contact-info a {
-            margin: 0 10px;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        /* Folder Accordion Styles */
-        .folder {
-            background: var(--folder-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .folder-header {
-            padding: 1rem;
-            background: #f1f5f9;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            user-select: none;
-        }
-
-        .folder-header::before {
-            content: "📁";
-            margin-right: 10px;
-        }
-
-        .folder.active .folder-header::before {
-            content: "📂";
-        }
-
-        .folder-content {
-            display: none;
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .folder.active .folder-content {
-            display: block;
-        }
-
-        /* Certification Grid & Badge Styles */
-        .cert-card {
-            border-left: 4px solid var(--primary-color);
-            background: #fafafa;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .cert-card h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        .verify-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #059669;
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-top: 0.5rem;
-            cursor: pointer;
-            border: none;
-            transition: background 0.2s;
-        }
-
-        .verify-btn:hover {
-            background-color: #047857;
-        }
-
-        .verify-btn::before {
-            content: "✓";
-            margin-right: 6px;
-            font-weight: bold;
-        }
-
-        /* Verification Modal Popup */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            width: 90%;
-            max-width: 700px;
-            height: 80vh;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .modal-header {
-            padding: 1rem;
-            background: #f1f5f9;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .modal-body {
-            flex: 1;
-        }
-
-        .modal-body iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -170,17 +15,16 @@
         <div class="contact-info">
             <a href="mailto:chiranjeevi210@gmail.com">📧 Email</a>
             <a href="tel:+919949163002">📱 Phone</a>
-            <a href="#">🎓 Google Scholar</a>
+            <a href="https://google.com" target="_blank" rel="noopener">🎓 Google Scholar</a>
         </div>
     </header>
 
-    <!-- Folder 1: Academic -->
+    <!-- Folder 1: Academic Qualifications -->
     <div class="folder">
         <div class="folder-header">Academic Qualifications</div>
         <div class="folder-content">
-            <!-- Your existing table goes here -->
-            <p><strong>M.Tech:</strong> JNTU, Kakinada (2012)</p>
-            <p><strong>B.Tech:</strong> Chaitanya Engg. College (2007)</p>
+            <p><strong>M.Tech (High Voltage Engineering):</strong> JNTU, Kakinada (2012) | 72%</p>
+            <p><strong>B.Tech (Electrical & Electronics Engineering):</strong> Chaitanya Engg. College (2007) | 71.63%</p>
         </div>
     </div>
 
@@ -188,26 +32,16 @@
     <div class="folder">
         <div class="folder-header">Coursera Professional Certifications</div>
         <div class="folder-content">
-            
             <div class="cert-card">
                 <h3>IBM Full Stack JavaScript Developer</h3>
                 <p><small>September 2026</small></p>
-                <!-- REPLACE # WITH YOUR ACTUAL COURSERA VERIFICATION LINK -->
-                <button class="verify-btn" onclick="openVerification('https://coursera.org')">Verify Credential</button>
+                <button class="verify-btn" data-url="https://coursera.org">Verify Credential</button>
             </div>
-
             <div class="cert-card">
                 <h3>Microsoft AI and ML Engineering</h3>
                 <p><small>July 2026</small></p>
-                <button class="verify-btn" onclick="openVerification('https://coursera.org')">Verify Credential</button>
+                <button class="verify-btn" data-url="https://coursera.org">Verify Credential</button>
             </div>
-
-            <div class="cert-card">
-                <h3>IBM AI Developer</h3>
-                <p><small>June 2026</small></p>
-                <button class="verify-btn" onclick="openVerification('https://coursera.org')">Verify Credential</button>
-            </div>
-
         </div>
     </div>
 
@@ -218,22 +52,18 @@
             <ul>
                 <li>
                     Advanced Computer Architecture (April 2026) 
-                    <button class="verify-btn" onclick="openVerification('YOUR_NPTEL_CERT_URL')">Verify</button>
-                </li>
-                <li style="margin-top: 10px;">
-                    Advanced Computer Networks (April 2025)
-                    <button class="verify-btn" onclick="openVerification('YOUR_NPTEL_CERT_URL')">Verify</button>
+                    <button class="verify-btn btn-small" data-url="YOUR_NPTEL_URL">Verify</button>
                 </li>
             </ul>
         </div>
     </div>
 
-    <!-- Interactive Credential Modal -->
+    <!-- Embedded Verification Modal Window -->
     <div id="certModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span id="modalTitle" style="font-weight: bold;">Credential Verification</span>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <span id="modalTitle">Credential Verification</span>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
             </div>
             <div class="modal-body">
                 <iframe id="certFrame" src=""></iframe>
@@ -241,40 +71,7 @@
         </div>
     </div>
 
-    <script>
-        // Folder Toggle Logic
-        document.querySelectorAll('.folder-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                parent.classList.toggle('active');
-            });
-        });
-
-        // Verification Modal Logic
-        function openVerification(url) {
-            // Some platforms restrict iframes (X-Frame-Options). 
-            // If they block embedding, we gracefully fall back to opening a secure new tab.
-            if(url.includes('coursera.org') || url.includes('nptel')) {
-                window.open(url, '_blank', 'noopener,noreferrer');
-            } else {
-                // For direct images/PDFs or frame-friendly links, open inside the page
-                document.getElementById('certFrame').src = url;
-                document.getElementById('certModal').style.display = 'flex';
-            }
-        }
-
-        function closeModal() {
-            document.getElementById('certModal').style.display = 'none';
-            document.getElementById('certFrame').src = '';
-        }
-
-        // Close modal clicking outside content
-        window.onclick = function(event) {
-            const modal = document.getElementById('certModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
+    <!-- Link to external JS -->
+    <script src="script.js"></script>
 </body>
 </html>
